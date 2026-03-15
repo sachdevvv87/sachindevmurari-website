@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Answer Engine Optimization in 2026 | Sachin Devmurari</title>
+  <meta name="description" content="A practical AEO framework for getting your brand cited by ChatGPT, Perplexity, and Google SGE in 2026." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #07090F; --surface: #0E1117; --surface2: #141824;
+      --border: rgba(255,255,255,0.07); --primary: #6C5CE7;
+      --accent: #00D4AA; --text: #FFFFFF; --muted: #8892A4; --subtle: #C4CDD9;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; }
+    a { text-decoration: none; color: inherit; }
+
+    nav {
+      position: sticky; top: 0; z-index: 100; padding: 20px 60px;
+      display: flex; align-items: center; justify-content: space-between;
+      backdrop-filter: blur(20px); border-bottom: 1px solid var(--border);
+      background: rgba(7,9,15,0.85);
+    }
+    .nav-logo { font-size: 18px; font-weight: 700; }
+    .nav-logo span { color: var(--accent); }
+    .back-link { font-size: 14px; color: var(--muted); display: flex; align-items: center; gap: 6px; transition: color .2s; }
+    .back-link:hover { color: var(--text); }
+
+    /* POST HERO */
+    .post-hero {
+      padding: 80px 60px 60px;
+      max-width: 860px; margin: 0 auto;
+    }
+    .post-cat {
+      display: inline-block; background: rgba(108,92,231,0.15);
+      border: 1px solid rgba(108,92,231,0.35); border-radius: 100px;
+      padding: 4px 16px; font-size: 12px; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 1.5px; color: #A78BFA;
+      margin-bottom: 24px;
+    }
+    .post-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(36px, 5vw, 56px);
+      line-height: 1.1; letter-spacing: -1.5px; margin-bottom: 24px;
+    }
+    .post-subtitle { font-size: 19px; color: var(--subtle); line-height: 1.6; margin-bottom: 36px; }
+    .post-byline {
+      display: flex; align-items: center; gap: 16px;
+      padding: 20px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+    }
+    .byline-avatar {
+      width: 44px; height: 44px; border-radius: 50%;
+      overflow: hidden; flex-shrink: 0;
+      background: linear-gradient(135deg, #6C5CE7, #00D4AA);
+    }
+    .byline-avatar img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+    .byline-name { font-size: 15px; font-weight: 700; }
+    .byline-meta { font-size: 13px; color: var(--muted); margin-top: 2px; }
+
+    /* POST BODY */
+    .post-body {
+      max-width: 860px; margin: 0 auto;
+      padding: 60px 60px 120px;
+    }
+    .post-body h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 32px; letter-spacing: -0.5px; line-height: 1.2;
+      margin: 48px 0 20px;
+    }
+    .post-body h3 {
+      font-size: 20px; font-weight: 700; margin: 36px 0 14px; letter-spacing: -0.3px;
+    }
+    .post-body p { font-size: 17px; line-height: 1.8; color: var(--subtle); margin-bottom: 20px; }
+    .post-body strong { color: var(--text); font-weight: 700; }
+    .post-body ul, .post-body ol {
+      padding-left: 24px; margin-bottom: 20px;
+    }
+    .post-body li { font-size: 17px; line-height: 1.8; color: var(--subtle); margin-bottom: 8px; }
+    .post-body blockquote {
+      border-left: 3px solid var(--primary); padding: 16px 24px;
+      background: rgba(108,92,231,0.06); border-radius: 0 12px 12px 0;
+      margin: 32px 0;
+    }
+    .post-body blockquote p { font-size: 18px; font-style: italic; color: var(--text); margin: 0; }
+    .callout {
+      background: rgba(0,212,170,0.08); border: 1px solid rgba(0,212,170,0.25);
+      border-radius: 16px; padding: 24px 28px; margin: 32px 0;
+    }
+    .callout-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: var(--accent); margin-bottom: 8px; }
+    .callout p { font-size: 16px; color: var(--subtle); margin: 0; line-height: 1.7; }
+
+    /* CTA */
+    .post-cta {
+      max-width: 860px; margin: 0 auto 120px; padding: 0 60px;
+    }
+    .post-cta-inner {
+      background: linear-gradient(135deg, #6C5CE7 0%, #4C4BA0 40%, #1A1A3E 100%);
+      border-radius: 24px; padding: 48px; text-align: center;
+    }
+    .post-cta-inner h3 { font-family: 'DM Serif Display', serif; font-size: 32px; margin-bottom: 12px; }
+    .post-cta-inner p { color: rgba(255,255,255,0.7); margin-bottom: 28px; font-size: 16px; }
+    .btn-white {
+      display: inline-block; background: #fff; color: var(--primary);
+      padding: 14px 32px; border-radius: 100px;
+      font-size: 15px; font-weight: 700; transition: transform .2s;
+    }
+    .btn-white:hover { transform: translateY(-2px); }
+
+    footer { background: var(--surface); border-top: 1px solid var(--border); padding: 32px 60px; }
+    .footer-bottom { max-width: 860px; margin: 0 auto; display: flex; justify-content: space-between; font-size: 13px; color: var(--muted); }
+
+    @media (max-width: 768px) {
+      nav, .post-hero, .post-body, .post-cta { padding-left: 24px; padding-right: 24px; }
+      .post-title { font-size: 32px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="../index.html" class="nav-logo">Sachin<span>.</span></a>
+    <a href="../blog.html" class="back-link">← All Posts</a>
+  </nav>
+
+  <div class="post-hero">
+    <span class="post-cat">AEO / GEO</span>
+    <h1 class="post-title">Answer Engine Optimization in 2026: How to Get Your Brand Cited by ChatGPT, Perplexity &amp; Google SGE</h1>
+    <p class="post-subtitle">AEO is no longer optional. Here is a practical framework for structuring content that earns zero-click visibility across every major AI answer engine.</p>
+    <div class="post-byline">
+      <div class="byline-avatar">
+        <img src="../sachin.jpg" alt="Sachin Devmurari" />
+      </div>
+      <div>
+        <div class="byline-name">Sachin Devmurari</div>
+        <div class="byline-meta">March 10, 2026 &nbsp;·&nbsp; 10 min read</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="post-body">
+
+    <p>Search is no longer just a list of blue links. When someone asks ChatGPT "what is the best content marketing agency in the USA," an AI generates a direct answer - and only a handful of brands get named. That is Answer Engine Optimization (AEO) in a nutshell: the practice of making your content the source AI tools trust, cite, and quote.</p>
+
+    <p>In 2026, AEO has become as important as traditional SEO. This guide breaks down exactly how to implement it - without abandoning the SEO fundamentals that still matter.</p>
+
+    <h2>What is Answer Engine Optimization (AEO)?</h2>
+
+    <p>AEO is the practice of structuring your content so that AI-powered answer engines - ChatGPT, Perplexity, Google SGE, Bing Copilot, and voice assistants - surface your content as a direct answer rather than a link to click.</p>
+
+    <p>Traditional SEO gets you ranked. AEO gets you <strong>cited</strong>. The difference is massive for brand authority and trust.</p>
+
+    <blockquote>
+      <p>If SEO is about showing up in search results, AEO is about becoming the answer itself.</p>
+    </blockquote>
+
+    <h2>Why AEO Matters for B2B Brands Right Now</h2>
+
+    <p>B2B buyers increasingly start their research with AI tools rather than Google. A buyer researching "best AEO service for SaaS" might ask Perplexity first, get a curated answer with 3-5 named brands, and never visit a search results page at all.</p>
+
+    <p>If your brand is not in that answer, you have already lost the consideration stage. AEO is how you get into the answer.</p>
+
+    <h2>The 5-Part AEO Framework</h2>
+
+    <h3>1. Structure content around direct questions</h3>
+    <p>AI answer engines are optimized to respond to questions. Every piece of content you publish should be built around a specific question your ICP is asking - and your content should answer it directly in the first paragraph, before any context-setting.</p>
+
+    <div class="callout">
+      <div class="callout-label">AEO Tip</div>
+      <p>Start blog posts with a 2-3 sentence direct answer to the question your post addresses. This mirrors how AI models extract and cite answers from web content.</p>
+    </div>
+
+    <h3>2. Use FAQ schema markup</h3>
+    <p>FAQ structured data (schema.org/FAQPage) is one of the most powerful signals for AEO. It literally tells AI crawlers: "here are questions and here are the answers." Add FAQ schema to every important page on your site.</p>
+
+    <h3>3. Build authoritative entity coverage</h3>
+    <p>AI models trust entities - brands, people, topics - that appear consistently across multiple authoritative sources. Getting mentioned in industry publications, earning backlinks from high-authority domains, and maintaining an active LinkedIn presence all reinforce your entity authority.</p>
+
+    <h3>4. Write for citation readability</h3>
+    <p>AI tools pull short, quotable passages. Write in clear, declarative sentences. Avoid jargon-heavy phrasing. Use the exact terminology your ICP searches for. A sentence like "AEO structures content to earn direct citations in AI-generated responses" is more citation-friendly than a complex nested clause.</p>
+
+    <h3>5. Maintain content freshness</h3>
+    <p>AI models prefer recently updated content, especially for fast-moving topics like AI itself. Add a "last updated" date to key pages and revise them quarterly with new data or examples.</p>
+
+    <h2>AEO vs. Traditional SEO: Do Both</h2>
+
+    <p>AEO does not replace SEO - it extends it. The same content that ranks in Google can also earn AI citations, if it is structured correctly. The key differences:</p>
+
+    <ul>
+      <li><strong>SEO</strong> optimizes for keyword ranking and click-through rate</li>
+      <li><strong>AEO</strong> optimizes for directness, authority, and citation readability</li>
+      <li><strong>GEO</strong> (Generative Engine Optimization) focuses specifically on appearing in AI-generated long-form responses</li>
+    </ul>
+
+    <p>Run all three in parallel. They share the same content foundation and amplify each other.</p>
+
+    <h2>Where to Start: A 30-Day AEO Sprint</h2>
+
+    <p>If you are starting from zero, here is a focused 30-day plan:</p>
+
+    <ol>
+      <li><strong>Week 1:</strong> Audit your top 10 pages. Add FAQ schema to each. Rewrite introductions to lead with direct answers.</li>
+      <li><strong>Week 2:</strong> Identify the 20 questions your ICP asks most. Create or update pages that answer each one directly.</li>
+      <li><strong>Week 3:</strong> Launch a structured data implementation across the site. Add BreadcrumbList, Person, and Organization schema.</li>
+      <li><strong>Week 4:</strong> Publish 2-3 definitive guides on your core topics. These are your citation anchors.</li>
+    </ol>
+
+    <p>After 30 days, search for your brand name and core service keywords in Perplexity and ChatGPT. You should start seeing citations appear within 60-90 days of consistent AEO implementation.</p>
+
+    <h2>Measuring AEO Success</h2>
+
+    <p>AEO metrics are still evolving, but here is what to track:</p>
+
+    <ul>
+      <li>Brand mentions in Perplexity, ChatGPT, and Gemini responses (manual monitoring or tools like Profound)</li>
+      <li>Featured snippet captures in Google Search Console</li>
+      <li>Direct traffic increases (often driven by AI-generated brand searches)</li>
+      <li>Branded search volume growth in Google Trends</li>
+    </ul>
+
+    <p>AEO is a long game. The brands investing in it now will own the AI-first era of B2B discovery.</p>
+
+  </div>
+
+  <div class="post-cta">
+    <div class="post-cta-inner">
+      <h3>Want AEO working for your brand?</h3>
+      <p>I help B2B SaaS and enterprise tech brands get cited by AI answer engines. Let's talk about your AEO strategy.</p>
+      <a href="../contact.html" class="btn-white">Book a Free Call →</a>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-bottom">
+      <span>© 2026 Sachin Devmurari</span>
+      <a href="../blog.html" style="color:var(--accent)">← All Posts</a>
+    </div>
+  </footer>
+
+</body>
+</html>

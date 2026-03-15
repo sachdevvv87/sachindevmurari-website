@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Answer Engine Optimization (AEO) Service | Sachin Devmurari</title>
+  <meta name="description" content="Get your brand cited by ChatGPT, Perplexity, and Google SGE. Sachin Devmurari's AEO service structures your content for zero-click AI visibility - the future of B2B discoverability." />
+  <link rel="canonical" href="https://sachindevmurari.com/services/aeo.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #07090F; --surface: #0E1117; --surface2: #141824;
+      --border: rgba(255,255,255,0.07); --primary: #6C5CE7;
+      --accent: #00D4AA; --text: #FFFFFF; --muted: #8892A4; --subtle: #C4CDD9;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; }
+    a { text-decoration: none; color: inherit; }
+
+    nav {
+      position: sticky; top: 0; z-index: 100; padding: 20px 60px;
+      display: flex; align-items: center; justify-content: space-between;
+      backdrop-filter: blur(20px); border-bottom: 1px solid var(--border);
+      background: rgba(7,9,15,0.85);
+    }
+    .nav-logo { font-size: 18px; font-weight: 700; }
+    .nav-logo span { color: var(--accent); }
+    .nav-links { display: flex; gap: 36px; list-style: none; font-size: 14px; font-weight: 500; color: var(--muted); }
+    .nav-links a:hover { color: var(--text); }
+    .nav-cta { background: var(--primary); color: #fff; padding: 10px 24px; border-radius: 100px; font-size: 14px; font-weight: 600; transition: opacity .2s; }
+    .nav-cta:hover { opacity: 0.85; }
+
+    /* HERO */
+    .svc-hero {
+      padding: 100px 60px 80px;
+      max-width: 1000px; margin: 0 auto; text-align: center;
+    }
+    .svc-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(108,92,231,0.15); border: 1px solid rgba(108,92,231,0.35);
+      border-radius: 100px; padding: 6px 20px; font-size: 12px; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 1.5px; color: #A78BFA; margin-bottom: 28px;
+    }
+    .svc-badge-dot { width: 6px; height: 6px; border-radius: 50%; background: #A78BFA; animation: pulse 2s infinite; }
+    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+    .svc-icon { font-size: 64px; margin-bottom: 24px; }
+    .svc-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(40px, 5vw, 64px);
+      line-height: 1.1; letter-spacing: -1.5px; margin-bottom: 24px;
+    }
+    .svc-title span { color: var(--accent); }
+    .svc-subtitle { font-size: 19px; color: var(--subtle); line-height: 1.7; max-width: 700px; margin: 0 auto 40px; }
+    .hero-cta-row { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    .btn-primary { display: inline-block; background: var(--primary); color: #fff; padding: 14px 32px; border-radius: 100px; font-size: 15px; font-weight: 700; transition: opacity .2s; }
+    .btn-primary:hover { opacity: 0.85; }
+    .btn-ghost { display: inline-block; border: 1px solid var(--border); color: var(--subtle); padding: 14px 32px; border-radius: 100px; font-size: 15px; font-weight: 600; transition: border-color .2s, color .2s; }
+    .btn-ghost:hover { border-color: var(--primary); color: var(--text); }
+
+    /* STATS ROW */
+    .stats-row {
+      display: flex; justify-content: center; gap: 0;
+      border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+      background: var(--surface); margin: 0;
+    }
+    .stat-item { flex: 1; max-width: 220px; padding: 40px 32px; text-align: center; border-right: 1px solid var(--border); }
+    .stat-item:last-child { border-right: none; }
+    .stat-num { font-family: 'DM Serif Display', serif; font-size: 40px; color: var(--accent); }
+    .stat-label { font-size: 13px; color: var(--muted); margin-top: 6px; }
+
+    /* SECTIONS */
+    .section { padding: 80px 60px; max-width: 1100px; margin: 0 auto; }
+    .section-label { font-size: 12px; text-transform: uppercase; letter-spacing: 3px; color: var(--accent); font-weight: 700; margin-bottom: 16px; }
+    .section-title { font-family: 'DM Serif Display', serif; font-size: clamp(32px, 4vw, 48px); line-height: 1.15; letter-spacing: -1px; margin-bottom: 20px; }
+    .section-sub { font-size: 17px; color: var(--subtle); line-height: 1.7; max-width: 600px; margin-bottom: 56px; }
+
+    /* WHAT YOU GET */
+    .deliverables-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .deliverable-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 20px; padding: 28px;
+      transition: border-color .25s, transform .25s;
+    }
+    .deliverable-card:hover { border-color: rgba(108,92,231,0.35); transform: translateY(-4px); }
+    .d-icon { font-size: 28px; margin-bottom: 16px; }
+    .d-title { font-size: 16px; font-weight: 700; margin-bottom: 10px; }
+    .d-desc { font-size: 14px; color: var(--muted); line-height: 1.6; }
+
+    /* WHO IT'S FOR */
+    .audience-section { background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .audience-inner { max-width: 1100px; margin: 0 auto; padding: 80px 60px; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    .audience-list { list-style: none; }
+    .audience-list li { display: flex; align-items: flex-start; gap: 12px; padding: 14px 0; border-bottom: 1px solid var(--border); font-size: 16px; color: var(--subtle); line-height: 1.5; }
+    .audience-list li:last-child { border-bottom: none; }
+    .check { color: var(--accent); font-size: 18px; flex-shrink: 0; margin-top: 1px; }
+
+    /* PROCESS */
+    .process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+    .process-step {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 20px; padding: 28px; position: relative;
+    }
+    .step-num { font-family: 'DM Serif Display', serif; font-size: 48px; color: rgba(108,92,231,0.2); line-height: 1; margin-bottom: 16px; }
+    .step-title { font-size: 16px; font-weight: 700; margin-bottom: 10px; }
+    .step-desc { font-size: 14px; color: var(--muted); line-height: 1.6; }
+
+    /* CALLOUT */
+    .callout {
+      background: rgba(0,212,170,0.08); border: 1px solid rgba(0,212,170,0.25);
+      border-radius: 20px; padding: 32px 40px; margin: 0 0 48px;
+      display: flex; gap: 20px; align-items: flex-start;
+    }
+    .callout-icon { font-size: 28px; flex-shrink: 0; }
+    .callout-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: var(--accent); margin-bottom: 8px; }
+    .callout p { font-size: 16px; color: var(--subtle); line-height: 1.7; margin: 0; }
+
+    /* CTA */
+    .svc-cta { padding: 0 60px 120px; max-width: 1100px; margin: 0 auto; }
+    .svc-cta-inner {
+      background: linear-gradient(135deg, #6C5CE7 0%, #4C4BA0 40%, #1A1A3E 100%);
+      border-radius: 28px; padding: 64px 48px; text-align: center;
+    }
+    .svc-cta-inner h3 { font-family: 'DM Serif Display', serif; font-size: 40px; margin-bottom: 16px; }
+    .svc-cta-inner p { color: rgba(255,255,255,0.75); margin-bottom: 32px; font-size: 17px; max-width: 520px; margin-left: auto; margin-right: auto; }
+    .btn-white { display: inline-block; background: #fff; color: var(--primary); padding: 16px 40px; border-radius: 100px; font-size: 16px; font-weight: 700; transition: transform .2s; }
+    .btn-white:hover { transform: translateY(-2px); }
+
+    footer { background: var(--surface); border-top: 1px solid var(--border); padding: 32px 60px; }
+    .footer-bottom { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; font-size: 13px; color: var(--muted); }
+
+    @media (max-width: 900px) {
+      nav { padding: 16px 24px; }
+      .nav-links { display: none; }
+      .svc-hero, .section, .svc-cta { padding-left: 24px; padding-right: 24px; }
+      .deliverables-grid, .process-grid { grid-template-columns: 1fr; }
+      .audience-inner { grid-template-columns: 1fr; padding: 48px 24px; }
+      .stats-row { flex-wrap: wrap; }
+      .stat-item { border-right: none; border-bottom: 1px solid var(--border); }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="../index.html" class="nav-logo">Sachin<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="../index.html#about">About</a></li>
+      <li><a href="../index.html#services">Services</a></li>
+      <li><a href="../index.html#results">Results</a></li>
+      <li><a href="../blog.html">Blog</a></li>
+    </ul>
+    <a href="../contact.html" class="nav-cta">Let's Talk →</a>
+  </nav>
+
+  <!-- HERO -->
+  <div class="svc-hero">
+    <div class="svc-badge"><span class="svc-badge-dot"></span> Trending Service</div>
+    <div class="svc-icon">🎯</div>
+    <h1 class="svc-title">Answer Engine<br><span>Optimization</span> Service</h1>
+    <p class="svc-subtitle">Stop competing for clicks. Start becoming the answer. AEO gets your brand cited directly by ChatGPT, Perplexity, Google SGE, and every major AI search engine - the new front door for B2B buyers.</p>
+    <div class="hero-cta-row">
+      <a href="../contact.html" class="btn-primary">Book a Free AEO Audit →</a>
+      <a href="../blog.html" class="btn-ghost">Read AEO Insights</a>
+    </div>
+  </div>
+
+  <!-- STATS -->
+  <div class="stats-row">
+    <div class="stat-item">
+      <div class="stat-num">3x</div>
+      <div class="stat-label">AI citation lift for clients</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">60-90</div>
+      <div class="stat-label">Days to first AI mentions</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">5+</div>
+      <div class="stat-label">AI engines optimized for</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">50+</div>
+      <div class="stat-label">B2B brands served</div>
+    </div>
+  </div>
+
+  <!-- WHAT IS AEO -->
+  <div class="section">
+    <div class="section-label">What Is AEO</div>
+    <h2 class="section-title">SEO gets you ranked.<br>AEO gets you cited.</h2>
+    <p class="section-sub">When a B2B buyer types "best content marketing agency for SaaS" into ChatGPT, they get a direct answer - not a list of links. AEO is the discipline of making sure your brand is in that answer.</p>
+
+    <div class="callout">
+      <div class="callout-icon">💡</div>
+      <div>
+        <div class="callout-label">Why This Matters Now</div>
+        <p>Over 60% of B2B research journeys now begin on AI tools like Perplexity and ChatGPT. If your brand is not cited in those responses, you are invisible in the consideration stage - before a buyer ever reaches Google.</p>
+      </div>
+    </div>
+
+    <div class="deliverables-grid">
+      <div class="deliverable-card">
+        <div class="d-icon">🤖</div>
+        <div class="d-title">ChatGPT Citation Strategy</div>
+        <div class="d-desc">Structure your content so OpenAI's models recognize your brand as an authoritative source worth citing in direct answers.</div>
+      </div>
+      <div class="deliverable-card">
+        <div class="d-icon">🔍</div>
+        <div class="d-title">Perplexity Visibility</div>
+        <div class="d-desc">Optimize for Perplexity's real-time web search model with source-credibility signals and citation-ready content formatting.</div>
+      </div>
+      <div class="deliverable-card">
+        <div class="d-icon">🌐</div>
+        <div class="d-title">Google SGE Optimization</div>
+        <div class="d-desc">Win the AI-generated snapshot at the top of Google Search results before any traditional blue links appear.</div>
+      </div>
+      <div class="deliverable-card">
+        <div class="d-icon">📋</div>
+        <div class="d-title">FAQ Schema Implementation</div>
+        <div class="d-desc">Full structured data markup (FAQPage, HowTo, Organization, Person) that tells AI crawlers exactly what your content answers.</div>
+      </div>
+      <div class="deliverable-card">
+        <div class="d-icon">✍️</div>
+        <div class="d-title">Citation-Ready Content</div>
+        <div class="d-desc">Rewrite existing pages and create new content in clear, declarative sentences that AI engines extract and quote verbatim.</div>
+      </div>
+      <div class="deliverable-card">
+        <div class="d-icon">📊</div>
+        <div class="d-title">AEO Performance Monitoring</div>
+        <div class="d-desc">Monthly tracking of brand mentions across ChatGPT, Perplexity, Gemini, and Bing Copilot with competitor benchmarking.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WHO IT'S FOR -->
+  <div class="audience-section">
+    <div class="audience-inner">
+      <div>
+        <div class="section-label">Who It's For</div>
+        <h2 class="section-title">Built for B2B brands ready to win AI search.</h2>
+        <p style="font-size:16px; color:var(--subtle); line-height:1.7;">AEO delivers the highest ROI for brands in fast-moving, research-heavy B2B categories where buyers use AI tools before talking to sales.</p>
+      </div>
+      <ul class="audience-list">
+        <li><span class="check">✓</span> B2B SaaS companies targeting enterprise buyers</li>
+        <li><span class="check">✓</span> HR Tech, DevOps, and AI software brands</li>
+        <li><span class="check">✓</span> Professional services firms and consultancies</li>
+        <li><span class="check">✓</span> Agencies and marketing teams with existing content</li>
+        <li><span class="check">✓</span> Founders building personal brand authority</li>
+        <li><span class="check">✓</span> Brands losing ground to AI-native competitors</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- PROCESS -->
+  <div class="section">
+    <div class="section-label">The Process</div>
+    <h2 class="section-title">How we get you cited.</h2>
+    <p class="section-sub">A structured 4-phase approach that builds lasting AI citation authority - not quick fixes that disappear with the next model update.</p>
+    <div class="process-grid">
+      <div class="process-step">
+        <div class="step-num">01</div>
+        <div class="step-title">AEO Audit</div>
+        <div class="step-desc">Full analysis of current AI citation status, content gaps, schema coverage, and entity authority across your site.</div>
+      </div>
+      <div class="process-step">
+        <div class="step-num">02</div>
+        <div class="step-title">Content Restructure</div>
+        <div class="step-desc">Rewrite key pages with direct-answer formatting, FAQ blocks, and citation-optimized sentence structures.</div>
+      </div>
+      <div class="process-step">
+        <div class="step-num">03</div>
+        <div class="step-title">Schema Deployment</div>
+        <div class="step-desc">Implement full structured data: FAQPage, HowTo, Organization, Person, and BreadcrumbList across your site.</div>
+      </div>
+      <div class="process-step">
+        <div class="step-num">04</div>
+        <div class="step-title">Monitor and Scale</div>
+        <div class="step-desc">Monthly citation tracking, content refreshes, and ongoing optimization as AI models evolve.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="svc-cta">
+    <div class="svc-cta-inner">
+      <h3>Ready to become the answer?</h3>
+      <p>Book a free AEO audit. I'll show you exactly where your brand stands in AI search results and what it takes to get cited.</p>
+      <a href="../contact.html" class="btn-white">Book Your Free Audit →</a>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-bottom">
+      <span>© 2026 Sachin Devmurari</span>
+      <a href="../index.html#services" style="color:var(--accent)">← All Services</a>
+    </div>
+  </footer>
+
+</body>
+</html>

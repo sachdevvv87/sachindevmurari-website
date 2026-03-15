@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book a Free Strategy Call | Sachin Devmurari</title>
+  <meta name="description" content="Book a free 30-minute strategy call with Sachin Devmurari. Get in touch via phone, WhatsApp, or email to discuss AEO, SEO, and content marketing for your B2B brand." />
+  <link rel="canonical" href="https://sachindevmurari.com/contact.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #07090F; --surface: #0E1117; --surface2: #141824;
+      --border: rgba(255,255,255,0.07); --primary: #6C5CE7;
+      --accent: #00D4AA; --text: #FFFFFF; --muted: #8892A4; --subtle: #C4CDD9;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; }
+    a { text-decoration: none; color: inherit; }
+
+    nav {
+      position: sticky; top: 0; z-index: 100; padding: 20px 60px;
+      display: flex; align-items: center; justify-content: space-between;
+      backdrop-filter: blur(20px); border-bottom: 1px solid var(--border);
+      background: rgba(7,9,15,0.85);
+    }
+    .nav-logo { font-size: 18px; font-weight: 700; }
+    .nav-logo span { color: var(--accent); }
+    .nav-links { display: flex; gap: 36px; list-style: none; font-size: 14px; font-weight: 500; color: var(--muted); }
+    .nav-links a:hover { color: var(--text); }
+    .nav-cta { background: var(--primary); color: #fff; padding: 10px 24px; border-radius: 100px; font-size: 14px; font-weight: 600; transition: opacity .2s; }
+    .nav-cta:hover { opacity: 0.85; }
+
+    /* HERO */
+    .contact-hero {
+      padding: 100px 60px 80px;
+      max-width: 800px; margin: 0 auto; text-align: center;
+    }
+    .section-label { font-size: 12px; text-transform: uppercase; letter-spacing: 3px; color: var(--accent); font-weight: 700; margin-bottom: 20px; }
+    .hero-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(40px, 5vw, 64px);
+      line-height: 1.1; letter-spacing: -1.5px; margin-bottom: 20px;
+    }
+    .hero-subtitle { font-size: 18px; color: var(--subtle); line-height: 1.7; max-width: 560px; margin: 0 auto; }
+
+    /* CONTACT GRID */
+    .contact-section { padding: 0 60px 120px; max-width: 900px; margin: 0 auto; }
+
+    .contact-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 48px; }
+
+    .contact-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 24px; padding: 36px 28px; text-align: center;
+      transition: transform .25s, border-color .25s;
+      display: flex; flex-direction: column; align-items: center; gap: 16px;
+    }
+    .contact-card:hover { transform: translateY(-6px); border-color: rgba(108,92,231,0.35); }
+    .contact-card.whatsapp:hover { border-color: rgba(37,211,102,0.4); }
+    .contact-card.email:hover { border-color: rgba(0,212,170,0.4); }
+
+    .card-icon {
+      width: 64px; height: 64px; border-radius: 18px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 28px;
+    }
+    .card-icon.phone-icon { background: rgba(108,92,231,0.15); }
+    .card-icon.wa-icon { background: rgba(37,211,102,0.12); }
+    .card-icon.email-icon { background: rgba(0,212,170,0.12); }
+
+    .card-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: var(--muted); }
+    .card-value { font-size: 18px; font-weight: 700; letter-spacing: -0.3px; }
+    .card-desc { font-size: 13px; color: var(--muted); line-height: 1.5; }
+
+    .card-btn {
+      display: inline-block; padding: 10px 24px; border-radius: 100px;
+      font-size: 13px; font-weight: 700; transition: opacity .2s;
+      margin-top: 4px;
+    }
+    .card-btn:hover { opacity: 0.85; }
+    .btn-purple { background: var(--primary); color: #fff; }
+    .btn-green { background: #25D366; color: #fff; }
+    .btn-teal { background: var(--accent); color: #07090F; }
+
+    /* DIVIDER */
+    .or-divider {
+      text-align: center; position: relative; margin: 0 0 48px;
+    }
+    .or-divider::before {
+      content: ''; position: absolute; top: 50%; left: 0; right: 0; height: 1px; background: var(--border);
+    }
+    .or-divider span { position: relative; background: var(--bg); padding: 0 16px; font-size: 13px; color: var(--muted); font-weight: 600; }
+
+    /* WHAT TO EXPECT */
+    .expect-section {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 24px; padding: 40px 44px; margin-bottom: 48px;
+    }
+    .expect-title { font-family: 'DM Serif Display', serif; font-size: 26px; margin-bottom: 28px; }
+    .expect-list { list-style: none; display: flex; flex-direction: column; gap: 16px; }
+    .expect-list li {
+      display: flex; align-items: flex-start; gap: 14px;
+      font-size: 15px; color: var(--subtle); line-height: 1.6;
+    }
+    .expect-icon { font-size: 18px; flex-shrink: 0; margin-top: 1px; }
+
+    /* PROFILE STRIP */
+    .profile-strip {
+      background: linear-gradient(135deg, rgba(108,92,231,0.12), rgba(0,212,170,0.08));
+      border: 1px solid var(--border); border-radius: 24px;
+      padding: 32px 40px; display: flex; align-items: center; gap: 24px;
+    }
+    .profile-avatar {
+      width: 72px; height: 72px; border-radius: 50%; overflow: hidden; flex-shrink: 0;
+      background: linear-gradient(135deg, #6C5CE7, #00D4AA);
+    }
+    .profile-avatar img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+    .profile-name { font-size: 18px; font-weight: 700; margin-bottom: 4px; }
+    .profile-title { font-size: 14px; color: var(--muted); margin-bottom: 10px; }
+    .profile-badges { display: flex; gap: 8px; flex-wrap: wrap; }
+    .badge { background: var(--surface2); border: 1px solid var(--border); border-radius: 100px; padding: 3px 12px; font-size: 11px; font-weight: 600; color: var(--subtle); }
+
+    footer { background: var(--surface); border-top: 1px solid var(--border); padding: 32px 60px; }
+    .footer-bottom { max-width: 900px; margin: 0 auto; display: flex; justify-content: space-between; font-size: 13px; color: var(--muted); }
+
+    @media (max-width: 768px) {
+      nav, .contact-hero, .contact-section { padding-left: 24px; padding-right: 24px; }
+      .contact-cards { grid-template-columns: 1fr; }
+      .profile-strip { flex-direction: column; text-align: center; }
+      .profile-badges { justify-content: center; }
+      .expect-section { padding: 28px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">Sachin<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#services">Services</a></li>
+      <li><a href="index.html#results">Results</a></li>
+      <li><a href="blog.html">Blog</a></li>
+    </ul>
+    <a href="contact.html" class="nav-cta" style="background:var(--accent); color:#07090F;">Let's Talk →</a>
+  </nav>
+
+  <!-- HERO -->
+  <div class="contact-hero">
+    <div class="section-label">Get In Touch</div>
+    <h1 class="hero-title">Let's talk about<br>your growth.</h1>
+    <p class="hero-subtitle">Book a free 30-minute strategy call. No commitment - just a direct conversation about what it would take to get your brand cited, ranked, and remembered.</p>
+  </div>
+
+  <!-- CONTACT SECTION -->
+  <div class="contact-section">
+
+    <div class="contact-cards">
+
+      <!-- Phone -->
+      <div class="contact-card">
+        <div class="card-icon phone-icon">📞</div>
+        <div class="card-label">Phone</div>
+        <div class="card-value">+91 94294 37450</div>
+        <div class="card-desc">Call directly for a quick chat or to schedule a strategy session.</div>
+        <a href="tel:+919429437450" class="card-btn btn-purple">Call Now</a>
+      </div>
+
+      <!-- WhatsApp -->
+      <div class="contact-card whatsapp">
+        <div class="card-icon wa-icon">💬</div>
+        <div class="card-label">WhatsApp</div>
+        <div class="card-value">+91 94294 37450</div>
+        <div class="card-desc">Message on WhatsApp for a faster response - available Mon-Sat.</div>
+        <a href="https://wa.me/919429437450?text=Hi%20Sachin%2C%20I%20found%20you%20online%20and%20would%20love%20to%20discuss%20my%20content%20strategy." target="_blank" rel="noopener" class="card-btn btn-green">Chat on WhatsApp</a>
+      </div>
+
+      <!-- Email -->
+      <div class="contact-card email">
+        <div class="card-icon email-icon">✉️</div>
+        <div class="card-label">Email</div>
+        <div class="card-value" style="font-size:14px; word-break:break-all;">devmurari.sachin87@gmail.com</div>
+        <div class="card-desc">Prefer email? Send a brief overview of your project and goals.</div>
+        <a href="mailto:devmurari.sachin87@gmail.com?subject=Strategy%20Call%20Request&body=Hi%20Sachin%2C%0A%0AI%20would%20love%20to%20discuss%20working%20together.%20Here%27s%20a%20quick%20overview%20of%20what%20I%27m%20looking%20for%3A" class="card-btn btn-teal">Send Email</a>
+      </div>
+
+    </div>
+
+    <div class="or-divider"><span>What to expect on the call</span></div>
+
+    <div class="expect-section">
+      <div class="expect-title">Your free 30-minute strategy session.</div>
+      <ul class="expect-list">
+        <li><span class="expect-icon">🎯</span> We identify your biggest content and visibility gap - where you are losing to AI search and competitors right now.</li>
+        <li><span class="expect-icon">🗺️</span> I walk you through a quick AEO/SEO audit of your site and show you 2-3 immediate wins you can act on.</li>
+        <li><span class="expect-icon">📋</span> You leave with a clear sense of what a 90-day growth roadmap looks like for your specific brand and category.</li>
+        <li><span class="expect-icon">🤝</span> No hard sell. If we are a fit, great. If not, you still walk away with actionable insights you can use immediately.</li>
+      </ul>
+    </div>
+
+    <div class="profile-strip">
+      <div class="profile-avatar">
+        <img src="sachin.jpg" alt="Sachin Devmurari" />
+      </div>
+      <div>
+        <div class="profile-name">Sachin Devmurari</div>
+        <div class="profile-title">B2B Content Strategist - AEO, SEO and Content Marketing</div>
+        <div class="profile-badges">
+          <span class="badge">6+ Years Experience</span>
+          <span class="badge">50+ Brands Served</span>
+          <span class="badge">Ahmedabad, India</span>
+          <span class="badge">Available for Global Clients</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    <div class="footer-bottom">
+      <span>© 2026 Sachin Devmurari</span>
+      <a href="index.html" style="color:var(--accent)">← Back to Home</a>
+    </div>
+  </footer>
+
+</body>
+</html>

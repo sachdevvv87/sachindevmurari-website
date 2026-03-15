@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Generative Engine Optimization (GEO) Service | Sachin Devmurari</title>
+  <meta name="description" content="Optimize your brand for AI-generated responses from Gemini, Claude, Bing AI, and ChatGPT. Sachin Devmurari's GEO service makes your brand part of the answer - not just a search result." />
+  <link rel="canonical" href="https://sachindevmurari.com/services/geo.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #07090F; --surface: #0E1117; --surface2: #141824;
+      --border: rgba(255,255,255,0.07); --primary: #6C5CE7;
+      --accent: #00D4AA; --text: #FFFFFF; --muted: #8892A4; --subtle: #C4CDD9;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; }
+    a { text-decoration: none; color: inherit; }
+
+    nav {
+      position: sticky; top: 0; z-index: 100; padding: 20px 60px;
+      display: flex; align-items: center; justify-content: space-between;
+      backdrop-filter: blur(20px); border-bottom: 1px solid var(--border);
+      background: rgba(7,9,15,0.85);
+    }
+    .nav-logo { font-size: 18px; font-weight: 700; }
+    .nav-logo span { color: var(--accent); }
+    .nav-links { display: flex; gap: 36px; list-style: none; font-size: 14px; font-weight: 500; color: var(--muted); }
+    .nav-links a:hover { color: var(--text); }
+    .nav-cta { background: var(--primary); color: #fff; padding: 10px 24px; border-radius: 100px; font-size: 14px; font-weight: 600; transition: opacity .2s; }
+    .nav-cta:hover { opacity: 0.85; }
+
+    .svc-hero { padding: 100px 60px 80px; max-width: 1000px; margin: 0 auto; text-align: center; }
+    .svc-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(0,212,170,0.12); border: 1px solid rgba(0,212,170,0.3);
+      border-radius: 100px; padding: 6px 20px; font-size: 12px; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 1.5px; color: var(--accent); margin-bottom: 28px;
+    }
+    .svc-icon { font-size: 64px; margin-bottom: 24px; }
+    .svc-title { font-family: 'DM Serif Display', serif; font-size: clamp(40px, 5vw, 64px); line-height: 1.1; letter-spacing: -1.5px; margin-bottom: 24px; }
+    .svc-title span { color: var(--accent); }
+    .svc-subtitle { font-size: 19px; color: var(--subtle); line-height: 1.7; max-width: 700px; margin: 0 auto 40px; }
+    .hero-cta-row { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    .btn-primary { display: inline-block; background: var(--primary); color: #fff; padding: 14px 32px; border-radius: 100px; font-size: 15px; font-weight: 700; transition: opacity .2s; }
+    .btn-primary:hover { opacity: 0.85; }
+    .btn-ghost { display: inline-block; border: 1px solid var(--border); color: var(--subtle); padding: 14px 32px; border-radius: 100px; font-size: 15px; font-weight: 600; transition: border-color .2s, color .2s; }
+    .btn-ghost:hover { border-color: var(--primary); color: var(--text); }
+
+    .stats-row { display: flex; justify-content: center; gap: 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); background: var(--surface); }
+    .stat-item { flex: 1; max-width: 220px; padding: 40px 32px; text-align: center; border-right: 1px solid var(--border); }
+    .stat-item:last-child { border-right: none; }
+    .stat-num { font-family: 'DM Serif Display', serif; font-size: 40px; color: var(--accent); }
+    .stat-label { font-size: 13px; color: var(--muted); margin-top: 6px; }
+
+    .section { padding: 80px 60px; max-width: 1100px; margin: 0 auto; }
+    .section-label { font-size: 12px; text-transform: uppercase; letter-spacing: 3px; color: var(--accent); font-weight: 700; margin-bottom: 16px; }
+    .section-title { font-family: 'DM Serif Display', serif; font-size: clamp(32px, 4vw, 48px); line-height: 1.15; letter-spacing: -1px; margin-bottom: 20px; }
+    .section-sub { font-size: 17px; color: var(--subtle); line-height: 1.7; max-width: 600px; margin-bottom: 56px; }
+
+    .deliverables-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .deliverable-card { background: var(--surface); border: 1px solid var(--border); border-radius: 20px; padding: 28px; transition: border-color .25s, transform .25s; }
+    .deliverable-card:hover { border-color: rgba(0,212,170,0.35); transform: translateY(-4px); }
+    .d-icon { font-size: 28px; margin-bottom: 16px; }
+    .d-title { font-size: 16px; font-weight: 700; margin-bottom: 10px; }
+    .d-desc { font-size: 14px; color: var(--muted); line-height: 1.6; }
+
+    .audience-section { background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .audience-inner { max-width: 1100px; margin: 0 auto; padding: 80px 60px; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    .audience-list { list-style: none; }
+    .audience-list li { display: flex; align-items: flex-start; gap: 12px; padding: 14px 0; border-bottom: 1px solid var(--border); font-size: 16px; color: var(--subtle); line-height: 1.5; }
+    .audience-list li:last-child { border-bottom: none; }
+    .check { color: var(--accent); font-size: 18px; flex-shrink: 0; margin-top: 1px; }
+
+    .process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+    .process-step { background: var(--surface); border: 1px solid var(--border); border-radius: 20px; padding: 28px; }
+    .step-num { font-family: 'DM Serif Display', serif; font-size: 48px; color: rgba(0,212,170,0.2); line-height: 1; margin-bottom: 16px; }
+    .step-title { font-size: 16px; font-weight: 700; margin-bottom: 10px; }
+    .step-desc { font-size: 14px; color: var(--muted); line-height: 1.6; }
+
+    .callout { background: rgba(0,212,170,0.08); border: 1px solid rgba(0,212,170,0.25); border-radius: 20px; padding: 32px 40px; margin: 0 0 48px; display: flex; gap: 20px; align-items: flex-start; }
+    .callout-icon { font-size: 28px; flex-shrink: 0; }
+    .callout-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: var(--accent); margin-bottom: 8px; }
+    .callout p { font-size: 16px; color: var(--subtle); line-height: 1.7; margin: 0; }
+
+    .svc-cta { padding: 0 60px 120px; max-width: 1100px; margin: 0 auto; }
+    .svc-cta-inner { background: linear-gradient(135deg, #00D4AA 0%, #0A9E80 40%, #062E25 100%); border-radius: 28px; padding: 64px 48px; text-align: center; }
+    .svc-cta-inner h3 { font-family: 'DM Serif Display', serif; font-size: 40px; margin-bottom: 16px; }
+    .svc-cta-inner p { color: rgba(255,255,255,0.8); margin-bottom: 32px; font-size: 17px; max-width: 520px; margin-left: auto; margin-right: auto; }
+    .btn-white { display: inline-block; background: #fff; color: #062E25; padding: 16px 40px; border-radius: 100px; font-size: 16px; font-weight: 700; transition: transform .2s; }
+    .btn-white:hover { transform: translateY(-2px); }
+
+    footer { background: var(--surface); border-top: 1px solid var(--border); padding: 32px 60px; }
+    .footer-bottom { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; font-size: 13px; color: var(--muted); }
+
+    @media (max-width: 900px) {
+      nav { padding: 16px 24px; }
+      .nav-links { display: none; }
+      .svc-hero, .section, .svc-cta { padding-left: 24px; padding-right: 24px; }
+      .deliverables-grid, .process-grid { grid-template-columns: 1fr; }
+      .audience-inner { grid-template-columns: 1fr; padding: 48px 24px; }
+      .stats-row { flex-wrap: wrap; }
+      .stat-item { border-right: none; border-bottom: 1px solid var(--border); }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="../index.html" class="nav-logo">Sachin<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="../index.html#about">About</a></li>
+      <li><a href="../index.html#services">Services</a></li>
+      <li><a href="../index.html#results">Results</a></li>
+      <li><a href="../blog.html">Blog</a></li>
+    </ul>
+    <a href="../contact.html" class="nav-cta">Let's Talk →</a>
+  </nav>
+
+  <div class="svc-hero">
+    <div class="svc-badge">⚙️ Next-Gen Organic</div>
+    <div class="svc-icon">⚙️</div>
+    <h1 class="svc-title">Generative Engine<br><span>Optimization</span> Service</h1>
+    <p class="svc-subtitle">AI tools like Gemini, Claude, and Bing AI are generating answers - not just links. GEO ensures your brand appears inside those AI-generated responses where your buyers are already reading.</p>
+    <div class="hero-cta-row">
+      <a href="../contact.html" class="btn-primary">Get a GEO Strategy →</a>
+      <a href="../blog.html" class="btn-ghost">Explore GEO Insights</a>
+    </div>
+  </div>
+
+  <div class="stats-row">
+    <div class="stat-item">
+      <div class="stat-num">4+</div>
+      <div class="stat-label">Generative engines optimized</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">90</div>
+      <div class="stat-label">Days to measurable mentions</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">50+</div>
+      <div class="stat-label">B2B brands served</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">6+</div>
+      <div class="stat-label">Years in content strategy</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">What Is GEO</div>
+    <h2 class="section-title">The next frontier<br>of organic visibility.</h2>
+    <p class="section-sub">Generative Engine Optimization (GEO) focuses on making your brand part of the long-form, context-rich answers that AI tools generate for complex queries - the kind your ideal buyers are asking daily.</p>
+
+    <div class="callout">
+      <div class="callout-icon">⚡</div>
+      <div>
+        <div class="callout-label">GEO vs AEO</div>
+        <p>AEO targets short, direct answers (featured snippets and quick responses). GEO targets longer AI-generated content - research summaries, comparisons, and recommendations where your brand should be named as a credible option.</p>
+      </div>
+    </div>
+
+    <div class="deliverables-grid">
+      <div class="deliverable-card">
+        <div class="d-icon">🧠</div>
+        <div class="d-title">Entity Authority Building</div>
+        <div class="d-desc">Build your brand as a recognized entity across AI knowledge graphs through consistent mentions, backlinks, and authoritative content.</div>
+      </div>
+      <div class="deliverable-card">
+        <div class="d-icon">📄</div>
+        <div class="d-title">Long-Form AI-Ready Content</div>
+        <div class="d-desc">Create comprehensive guides, comparison pages, and definitive resources that generative AI models extract and reference.</div>
+      </div>
+      <div class="deliverable-card">
+        <div class="d-icon">🔗</div>
+        <div class="d-title">Authority Signal Building</div>
+        <div class="d-desc">Earn mentions in industry publications, directories, and high-DA sites that AI models treat as credibility signals.</div>
+      </div>
+      <div class="deliverable-card">
+        <div class="d-icon">🏷️</div>
+        <div class="d-title">Semantic Content Optimization</div>
+        <div class="d-desc">Structure content around entities, relationships, and concepts rather than just keywords - the language of AI understanding.</div>
+      </div>
+      <div class="deliverable-card">
+        <div class="d-icon">📡</div>
+        <div class="d-title">Multi-Platform Presence</div>
+        <div class="d-desc">Establish consistent brand signals across LinkedIn, Medium, industry forums, and review sites that AI models index.</div>
+      </div>
+      <div class="deliverable-card">
+        <div class="d-icon">📈</div>
+        <div class="d-title">GEO Performance Reporting</div>
+        <div class="d-desc">Track your brand's presence in AI-generated responses across Gemini, Claude, Bing AI, and Perplexity with monthly benchmarking.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="audience-section">
+    <div class="audience-inner">
+      <div>
+        <div class="section-label">Who It's For</div>
+        <h2 class="section-title">For brands that want to lead the AI-generated conversation.</h2>
+        <p style="font-size:16px; color:var(--subtle); line-height:1.7;">GEO works best for brands with a strong content foundation that want to extend their visibility into the generative AI layer of search.</p>
+      </div>
+      <ul class="audience-list">
+        <li><span class="check">✓</span> B2B SaaS brands in competitive categories</li>
+        <li><span class="check">✓</span> Agencies wanting to appear in "best agency" AI responses</li>
+        <li><span class="check">✓</span> Enterprise tech brands with complex buyer journeys</li>
+        <li><span class="check">✓</span> Consultants and thought leaders building authority</li>
+        <li><span class="check">✓</span> Brands investing in long-term organic dominance</li>
+        <li><span class="check">✓</span> Companies already doing SEO but missing AI visibility</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">The Process</div>
+    <h2 class="section-title">How we build generative visibility.</h2>
+    <p class="section-sub">A systematic approach to making your brand the default reference in AI-generated answers across your category.</p>
+    <div class="process-grid">
+      <div class="process-step">
+        <div class="step-num">01</div>
+        <div class="step-title">GEO Benchmark</div>
+        <div class="step-desc">Test your brand across 50+ relevant queries in Gemini, Claude, Perplexity, and Bing AI to map your current generative visibility.</div>
+      </div>
+      <div class="process-step">
+        <div class="step-num">02</div>
+        <div class="step-title">Content Architecture</div>
+        <div class="step-desc">Build a topical content map targeting the queries where AI tools generate answers - and where your brand should appear.</div>
+      </div>
+      <div class="process-step">
+        <div class="step-num">03</div>
+        <div class="step-title">Authority Amplification</div>
+        <div class="step-desc">Earn coverage in publications and platforms that generative AI models treat as credible signal sources.</div>
+      </div>
+      <div class="process-step">
+        <div class="step-num">04</div>
+        <div class="step-title">Ongoing Optimization</div>
+        <div class="step-desc">Monthly GEO audits, content refreshes, and entity-building to keep pace with evolving AI training data.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="svc-cta">
+    <div class="svc-cta-inner">
+      <h3>Get inside the AI answer.</h3>
+      <p>Let's map your brand's current generative visibility and build a GEO strategy that puts you in the conversation.</p>
+      <a href="../contact.html" class="btn-white">Start Your GEO Strategy →</a>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-bottom">
+      <span>© 2026 Sachin Devmurari</span>
+      <a href="../index.html#services" style="color:var(--accent)">← All Services</a>
+    </div>
+  </footer>
+
+</body>
+</html>
