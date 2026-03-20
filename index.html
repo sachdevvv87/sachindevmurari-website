@@ -890,6 +890,51 @@
     .nav-hamburger.open span:nth-child(2) { opacity: 0; }
     .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
+    /* ── HERO TWO-COLUMN LAYOUT ──────────────────────────────────── */
+    .hero-layout {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 55fr 45fr;
+      gap: 60px;
+      align-items: center;
+      width: 100%;
+      max-width: 1400px;
+    }
+
+    /* ── HERO CHART PANEL ─────────────────────────────────────────── */
+    .hero-chart-panel {
+      background: rgba(14, 17, 23, 0.9);
+      border: 1px solid rgba(108, 92, 231, 0.22);
+      border-radius: var(--r-lg);
+      padding: 28px;
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      animation: fadeUp .7s .45s ease both;
+      box-shadow: 0 0 60px rgba(108, 92, 231, 0.1), inset 0 1px 0 rgba(255,255,255,0.05);
+    }
+
+    .chart-panel-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 4px;
+      letter-spacing: -0.2px;
+    }
+
+    .chart-panel-subtitle {
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 20px;
+      font-weight: 500;
+    }
+
+    .chart-panel-canvas-wrap {
+      position: relative;
+      width: 100%;
+      height: 240px;
+    }
+
     /* ── TABLET  (≤ 768px) ───────────────────────────────────────── */
     @media (max-width: 768px) {
 
@@ -933,7 +978,13 @@
         min-height: 100svh;
         align-items: flex-start;
       }
+      .hero-layout {
+        grid-template-columns: 1fr;
+        gap: 36px;
+      }
       .hero-inner { max-width: 100%; }
+      .hero-chart-panel { padding: 20px; }
+      .chart-panel-canvas-wrap { height: 200px; }
       .hero-badge {
         font-size: 11px;
         padding: 5px 12px 5px 7px;
@@ -1219,6 +1270,7 @@
     <div class="orb orb-2" aria-hidden="true"></div>
     <div class="orb orb-3" aria-hidden="true"></div>
 
+    <div class="hero-layout">
     <div class="hero-inner">
       <div class="hero-badge" aria-label="Specialty">
         <span class="dot" aria-hidden="true"></span>
@@ -1259,7 +1311,25 @@
           <div class="stat-label">AI Citations Growth</div>
         </div>
       </div>
+    </div><!-- /.hero-inner -->
+
+    <!-- ══ HERO CHART: Client Site Traffic Growth ══════════════════
+         Placeholder data — update the values inside heroTrafficChart
+         in the <script> block at the bottom of this file.
+         Months  : Jan     Feb     Mar     Apr     May     Jun
+         Visitors: 12,400  18,700  24,100  31,500  39,200  47,800
+    ═══════════════════════════════════════════════════════════════ -->
+    <div class="hero-chart-panel" aria-label="Client traffic growth chart">
+      <div class="chart-panel-title">Client Site Traffic Growth</div>
+      <div class="chart-panel-subtitle">Monthly organic visitors across client portfolio</div>
+      <div class="chart-panel-canvas-wrap">
+        <canvas id="heroTrafficChart"
+          aria-label="Bar chart showing monthly organic visitors growing from 12,400 in January to 47,800 in June">
+        </canvas>
+      </div>
     </div>
+
+    </div><!-- /.hero-layout -->
 
     <div class="scroll-hint" aria-hidden="true">
       <div class="scroll-line"></div>
@@ -1823,6 +1893,100 @@
         }
       });
     });
+  </script>
+
+  <!-- ── Chart.js CDN (used for hero traffic chart) ── -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+
+  <script>
+    // ══ HERO TRAFFIC CHART ════════════════════════════════════════════
+    // Placeholder data — update the arrays below to change the chart.
+    //   chartLabels : month names shown on the X-axis
+    //   chartData   : raw visitor counts for each month
+    //
+    //   Jan     Feb     Mar     Apr     May     Jun
+    //   12,400  18,700  24,100  31,500  39,200  47,800
+    // ══════════════════════════════════════════════════════════════════
+    (function () {
+      const chartLabels = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'];
+      const chartData   = [12400, 18700, 24100, 31500, 39200, 47800]; // ← swap values here
+
+      const canvas = document.getElementById('heroTrafficChart');
+      if (!canvas) return;
+
+      const ctx = canvas.getContext('2d');
+
+      // Gradient: teal (top) → purple (bottom)
+      const grad = ctx.createLinearGradient(0, 0, 0, 280);
+      grad.addColorStop(0,   'rgba(0, 212, 170, 0.92)');   // --accent
+      grad.addColorStop(1,   'rgba(108, 92, 231, 0.80)');  // --primary
+
+      new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: chartLabels,
+          datasets: [{
+            label: 'Organic Visitors',
+            data: chartData,
+            backgroundColor: grad,
+            borderRadius: 8,
+            borderSkipped: false,
+            borderColor: 'transparent',
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          animation: {
+            duration: 900,
+            easing: 'easeOutQuart',
+            delay: function (context) {
+              return context.dataIndex * 110; // staggered slide-up per bar
+            }
+          },
+          plugins: {
+            legend: { display: false },
+            tooltip: {
+              backgroundColor: 'rgba(14, 17, 23, 0.95)',
+              borderColor: 'rgba(108, 92, 231, 0.4)',
+              borderWidth: 1,
+              titleColor: '#ffffff',
+              bodyColor: '#8892A4',
+              padding: 12,
+              cornerRadius: 10,
+              callbacks: {
+                label: function (ctx) {
+                  return ' ' + ctx.parsed.y.toLocaleString() + ' visitors';
+                }
+              }
+            }
+          },
+          scales: {
+            x: {
+              grid: { display: false },
+              border: { display: false },
+              ticks: {
+                color: '#8892A4',
+                font: { family: 'Inter', size: 12, weight: '500' }
+              }
+            },
+            y: {
+              grid: { color: 'rgba(255,255,255,0.05)' },
+              border: { display: false, dash: [4, 4] },
+              ticks: {
+                color: '#8892A4',
+                font: { family: 'Inter', size: 11 },
+                maxTicksLimit: 5,
+                callback: function (val) {
+                  return (val / 1000) + 'K'; // format as 12K, 18K, etc.
+                }
+              }
+            }
+          }
+        }
+      });
+    })();
+    // ══ END HERO TRAFFIC CHART ═════════════════════════════════════════
   </script>
 </body>
 </html>
