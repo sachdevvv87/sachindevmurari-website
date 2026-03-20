@@ -939,6 +939,108 @@
       flex: 1;
     }
 
+    /* ── FEATURED WORK ───────────────────────────────────────────── */
+    .featured-work { background: var(--bg); }
+    .fw-inner { max-width: 1200px; margin: 0 auto; }
+    .fw-header { margin-bottom: 56px; }
+
+    .fw-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .fw-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      transition: transform .2s, box-shadow .2s;
+    }
+    .fw-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 40px rgba(108, 92, 231, 0.18);
+    }
+
+    /* Forbes card — gold/amber elevated treatment */
+    .fw-card--forbes {
+      border-color: rgba(245, 158, 11, 0.35);
+      box-shadow: 0 0 30px rgba(245, 158, 11, 0.07);
+    }
+    .fw-card--forbes:hover {
+      box-shadow: 0 8px 40px rgba(245, 158, 11, 0.22);
+    }
+
+    .fw-pub {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--accent);
+      background: rgba(0, 212, 170, 0.1);
+      border: 1px solid rgba(0, 212, 170, 0.2);
+      border-radius: 100px;
+      padding: 3px 10px;
+      width: fit-content;
+    }
+    .fw-card--forbes .fw-pub {
+      color: var(--accent2);
+      background: rgba(245, 158, 11, 0.1);
+      border-color: rgba(245, 158, 11, 0.28);
+    }
+
+    .fw-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.45;
+      letter-spacing: -0.2px;
+    }
+
+    .fw-desc {
+      font-size: 13px;
+      line-height: 1.65;
+      color: var(--muted);
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      flex: 1;
+    }
+
+    .fw-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-top: auto;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+    }
+
+    .fw-tag {
+      font-size: 11px;
+      font-weight: 600;
+      color: #A78BFA;
+      background: rgba(108, 92, 231, 0.12);
+      border: 1px solid rgba(108, 92, 231, 0.22);
+      border-radius: 100px;
+      padding: 3px 10px;
+      white-space: nowrap;
+    }
+
+    .fw-link {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--accent);
+      white-space: nowrap;
+      transition: color .2s;
+    }
+    .fw-card:hover .fw-link { color: #fff; }
+
     /* ── TABLET  (≤ 768px) ───────────────────────────────────────── */
     @media (max-width: 768px) {
 
@@ -1101,6 +1203,9 @@
       .faq-q { font-size: 15px; padding: 18px 20px; }
       .faq-a-inner { padding: 0 20px 18px; font-size: 14px; }
 
+      /* --- FEATURED WORK --- */
+      .fw-grid { grid-template-columns: repeat(2, 1fr); }
+
       /* --- TESTIMONIALS --- */
       .testi-header {
         flex-direction: column;
@@ -1199,6 +1304,10 @@
       .number-card { padding: 20px; }
       .number-val { font-size: 32px; }
       .number-label { font-size: 12px; }
+
+      /* --- FEATURED WORK --- */
+      .fw-grid { grid-template-columns: 1fr; }
+      .fw-card { padding: 20px; }
 
       /* --- FAQ --- */
       .faq-q { font-size: 14px; padding: 16px; gap: 12px; }
@@ -1389,6 +1498,78 @@
       </div>
     </div>
   </div>
+
+  <!-- ════════════════════════════════════════════════════════════ -->
+  <!--  FEATURED WORK                                               -->
+  <!-- ════════════════════════════════════════════════════════════ -->
+  <section class="featured-work" id="featured-work" aria-labelledby="fw-heading">
+    <div class="fw-inner">
+
+      <div class="fw-header reveal">
+        <div class="section-label">Featured Work</div>
+        <h2 class="section-title" id="fw-heading">Published across leading tech publications.</h2>
+      </div>
+
+      <div class="fw-grid">
+
+        <!-- 1. Forbes Technology Council -->
+        <div class="fw-card fw-card--forbes reveal">
+          <span class="fw-pub">Forbes Technology Council</span>
+          <div class="fw-title">The Role of AI in Future-Proofing Supply Chains</div>
+          <p class="fw-desc">How AI is enabling smarter demand forecasting, risk mitigation, and operational resilience across global supply chains.</p>
+          <div class="fw-footer">
+            <span class="fw-tag">AI / Supply Chain</span>
+            <a href="https://www.forbes.com/councils/forbestechcouncil/2025/03/06/the-role-of-ai-in-future-proofing-supply-chains/" target="_blank" rel="noopener" class="fw-link">Read Article →</a>
+          </div>
+        </div>
+
+        <!-- 2. Simform – Microservice Best Practices -->
+        <div class="fw-card reveal">
+          <span class="fw-pub">Simform</span>
+          <div class="fw-title">14 Microservice Best Practices For Your Projects: The 80/20 Way</div>
+          <p class="fw-desc">The 14 microservice best practices that drive the most impact with the least complexity — built for engineering and product teams.</p>
+          <div class="fw-footer">
+            <span class="fw-tag">Architecture</span>
+            <a href="https://www.simform.com/blog/microservice-best-practices/" target="_blank" rel="noopener" class="fw-link">Read Article →</a>
+          </div>
+        </div>
+
+        <!-- 3. Simform – Application Modernization -->
+        <div class="fw-card reveal">
+          <span class="fw-pub">Simform</span>
+          <div class="fw-title">How to Optimize Cost and Reduce Risks in Application Modernization</div>
+          <p class="fw-desc">A practical guide to cutting modernization costs and de-risking migration — without slowing your roadmap.</p>
+          <div class="fw-footer">
+            <span class="fw-tag">App Modernization</span>
+            <a href="https://www.simform.com/blog/application-modernization-cost-optimization/" target="_blank" rel="noopener" class="fw-link">Read Article →</a>
+          </div>
+        </div>
+
+        <!-- 4. MultiQoS – Power Apps Modernization -->
+        <div class="fw-card reveal">
+          <span class="fw-pub">MultiQoS</span>
+          <div class="fw-title">Power Apps Modernization: Strategy, Patterns, and Use Cases</div>
+          <p class="fw-desc">The four modernization strategies CIOs rely on most — from wrap-and-renew to strangler patterns — with real enterprise use cases.</p>
+          <div class="fw-footer">
+            <span class="fw-tag">App Modernization</span>
+            <a href="https://multiqos.com/blogs/power-apps-modernization/" target="_blank" rel="noopener" class="fw-link">Read Article →</a>
+          </div>
+        </div>
+
+        <!-- 5. AQe Digital – Quick Commerce -->
+        <div class="fw-card reveal">
+          <span class="fw-pub">AQe Digital</span>
+          <div class="fw-title">Quick Commerce App Development Guide for Businesses</div>
+          <p class="fw-desc">How quick commerce works, what it costs to build, and why the window for competitive advantage is narrowing fast.</p>
+          <div class="fw-footer">
+            <span class="fw-tag">eCommerce</span>
+            <a href="https://www.aqedigital.com/blog/quick-commerce-app/" target="_blank" rel="noopener" class="fw-link">Read Article →</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
 
   <!-- ════════════════════════════════════════════════════════════ -->
   <!--  ABOUT                                                       -->
