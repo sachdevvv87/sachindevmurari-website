@@ -1313,18 +1313,18 @@
       </div>
     </div><!-- /.hero-inner -->
 
-    <!-- ══ HERO CHART: Client Site Traffic Growth ══════════════════
-         Placeholder data — update the values inside heroTrafficChart
-         in the <script> block at the bottom of this file.
-         Months  : Jan     Feb     Mar     Apr     May     Jun
-         Visitors: 12,400  18,700  24,100  31,500  39,200  47,800
-    ═══════════════════════════════════════════════════════════════ -->
+    <!-- ══ HERO CHART: AI Overview Keyword Growth ══════════════════
+         Real client data — update chartData/chartLabels in the
+         <script> block at the bottom of this file to change values.
+         Month   : Oct'25  Nov'25  Dec'25  Jan'26  Feb'26  Mar'26
+         Keywords: 3       3       5       9       11      8
+    ════════════════════════════════════════════════════════════════ -->
     <div class="hero-chart-panel" aria-label="Client traffic growth chart">
-      <div class="chart-panel-title">Client Site Traffic Growth</div>
-      <div class="chart-panel-subtitle">Monthly organic visitors across client portfolio</div>
+      <div class="chart-panel-title">AI Overview Keyword Growth</div>
+      <div class="chart-panel-subtitle">Client organic visibility in Google AI Overviews</div>
       <div class="chart-panel-canvas-wrap">
         <canvas id="heroTrafficChart"
-          aria-label="Bar chart showing monthly organic visitors growing from 12,400 in January to 47,800 in June">
+          aria-label="Bar chart showing AI Overview keyword growth from 3 in Oct 2025 to 8 in Mar 2026">
         </canvas>
       </div>
     </div>
@@ -1902,14 +1902,14 @@
     // ══ HERO TRAFFIC CHART ════════════════════════════════════════════
     // Placeholder data — update the arrays below to change the chart.
     //   chartLabels : month names shown on the X-axis
-    //   chartData   : raw visitor counts for each month
+    //   chartData   : AI Overview keyword counts for each month
     //
-    //   Jan     Feb     Mar     Apr     May     Jun
-    //   12,400  18,700  24,100  31,500  39,200  47,800
+    //   Oct 2025  Nov 2025  Dec 2025  Jan 2026  Feb 2026  Mar 2026
+    //   3         3         5         9         11        8
     // ══════════════════════════════════════════════════════════════════
     (function () {
-      const chartLabels = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'];
-      const chartData   = [12400, 18700, 24100, 31500, 39200, 47800]; // ← swap values here
+      const chartLabels = ['Oct '25', 'Nov '25', 'Dec '25', 'Jan '26', 'Feb '26', 'Mar '26'];
+      const chartData   = [3, 3, 5, 9, 11, 8]; // ← swap values here
 
       const canvas = document.getElementById('heroTrafficChart');
       if (!canvas) return;
@@ -1956,7 +1956,7 @@
               cornerRadius: 10,
               callbacks: {
                 label: function (ctx) {
-                  return ' ' + ctx.parsed.y.toLocaleString() + ' visitors';
+                  return ' ' + ctx.parsed.y + ' keywords';
                 }
               }
             }
@@ -1976,9 +1976,10 @@
               ticks: {
                 color: '#8892A4',
                 font: { family: 'Inter', size: 11 },
-                maxTicksLimit: 5,
+                maxTicksLimit: 6,
+                stepSize: 2,
                 callback: function (val) {
-                  return (val / 1000) + 'K'; // format as 12K, 18K, etc.
+                  return Number.isInteger(val) ? val : ''; // whole numbers only (Keywords)
                 }
               }
             }
