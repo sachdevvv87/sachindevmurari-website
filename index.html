@@ -997,6 +997,21 @@
       margin-top: -2px;
     }
 
+    .hero-chart-title {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 12px;
+    }
+    #heroTrafficChart {
+      width: 100% !important;
+      max-width: 100%;
+      height: 160px !important;
+      margin-bottom: 8px;
+    }
+
     .hero-metric-block {
       padding: 24px 0;
     }
@@ -1470,7 +1485,7 @@
 
       <!-- H1 - primary keyword-rich heading -->
       <h1 class="hero-title">
-        Get Your Brand Featured in <span class="gradient-text">AI Answers</span> — Not Just Search Results
+        Get Your Brand Featured in <span class="gradient-text">AI Answers</span>: Not Just Search Results
       </h1>
 
       <p class="hero-sub">
@@ -1493,6 +1508,9 @@
     </div><!-- /.hero-inner -->
 
     <div class="hero-chart-panel" aria-label="AI visibility results">
+      <div class="hero-chart-title">AI Overview Keyword Growth</div>
+      <canvas id="heroTrafficChart" width="300" height="160" aria-label="Bar chart showing AI Overview keyword growth from Oct 2025 to Mar 2026"></canvas>
+
       <div class="hero-metric-block">
         <div class="metric-val gradient-text">+312%</div>
         <div class="metric-label">AI search visibility</div>
@@ -2140,6 +2158,65 @@
         }
       });
     });
+  </script>
+
+  <!-- Chart.js for hero bar chart -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <script>
+    (function () {
+      var ctx = document.getElementById('heroTrafficChart');
+      if (!ctx) return;
+      new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: ["Oct '25", "Nov '25", "Dec '25", "Jan '26", "Feb '26", "Mar '26"],
+          datasets: [{
+            label: 'AI Overview Keywords',
+            data: [3, 3, 5, 9, 11, 8],
+            backgroundColor: [
+              'rgba(99,102,241,0.5)',
+              'rgba(99,102,241,0.5)',
+              'rgba(99,102,241,0.6)',
+              'rgba(139,92,246,0.7)',
+              'rgba(139,92,246,0.85)',
+              'rgba(99,102,241,0.65)'
+            ],
+            borderColor: [
+              'rgba(99,102,241,0.9)',
+              'rgba(99,102,241,0.9)',
+              'rgba(99,102,241,1)',
+              'rgba(139,92,246,1)',
+              'rgba(139,92,246,1)',
+              'rgba(99,102,241,1)'
+            ],
+            borderWidth: 1,
+            borderRadius: 4
+          }]
+        },
+        options: {
+          responsive: false,
+          plugins: {
+            legend: { display: false },
+            tooltip: {
+              callbacks: {
+                label: function(ctx) { return ' ' + ctx.parsed.y + ' keywords'; }
+              }
+            }
+          },
+          scales: {
+            x: {
+              ticks: { color: 'rgba(255,255,255,0.6)', font: { size: 10 } },
+              grid: { color: 'rgba(255,255,255,0.05)' }
+            },
+            y: {
+              beginAtZero: true,
+              ticks: { color: 'rgba(255,255,255,0.6)', font: { size: 10 }, stepSize: 2 },
+              grid: { color: 'rgba(255,255,255,0.08)' }
+            }
+          }
+        }
+      });
+    })();
   </script>
 
 </body>
