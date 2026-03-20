@@ -1904,7 +1904,7 @@
     //   Oct 2025  Nov 2025  Dec 2025  Jan 2026  Feb 2026  Mar 2026
     //   3         3         5         9         11        8
     // ══════════════════════════════════════════════════════════════════
-    (function () {
+    window.addEventListener('load', function () {
       const chartLabels = ['Oct '25', 'Nov '25', 'Dec '25', 'Jan '26', 'Feb '26', 'Mar '26'];
       const chartData   = [3, 3, 5, 9, 11, 8]; // ← swap values here
 
@@ -1983,7 +1983,7 @@
           }
         }
       });
-    })();
+    }); // end window.addEventListener('load', ...)
     // ══ END HERO TRAFFIC CHART ═════════════════════════════════════════
   </script>
 </body>
