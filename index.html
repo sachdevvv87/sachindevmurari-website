@@ -986,30 +986,19 @@
       background: rgba(14, 17, 23, 0.9);
       border: 1px solid rgba(108, 92, 231, 0.22);
       border-radius: var(--r-lg);
-      padding: 28px;
+      padding: 32px;
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
       animation: fadeUp .7s .45s ease both;
       box-shadow: 0 0 60px rgba(108, 92, 231, 0.1), inset 0 1px 0 rgba(255,255,255,0.05);
-      min-height: 420px;
       display: flex;
-      flex-direction: column;
-      margin-top: -2px;
+      align-items: center;
+      justify-content: center;
     }
 
-    .hero-chart-title {
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.5);
-      margin-bottom: 12px;
-    }
     #heroTrafficChart {
       width: 100% !important;
       max-width: 100%;
-      height: 160px !important;
-      margin-bottom: 8px;
     }
 
     .hero-metric-block {
@@ -1508,21 +1497,7 @@
     </div><!-- /.hero-inner -->
 
     <div class="hero-chart-panel" aria-label="AI visibility results">
-      <div class="hero-chart-title">AI Overview Keyword Growth</div>
-      <canvas id="heroTrafficChart" width="300" height="160" aria-label="Bar chart showing AI Overview keyword growth from Oct 2025 to Mar 2026"></canvas>
-
-      <div class="hero-metric-block">
-        <div class="metric-val gradient-text">+312%</div>
-        <div class="metric-label">AI search visibility</div>
-      </div>
-      <div class="hero-metric-block">
-        <div class="metric-val">Featured</div>
-        <div class="metric-label">in ChatGPT and Google AI Overviews</div>
-      </div>
-      <div class="hero-metric-block">
-        <div class="metric-val gradient-text">4.2x</div>
-        <div class="metric-label">increase in high-intent traffic</div>
-      </div>
+      <div style="width:100%;height:220px"><canvas id="heroTrafficChart" aria-label="Bar chart showing AI Overview keyword growth from Oct 2025 to Mar 2026"></canvas></div>
     </div>
 
     </div><!-- /.hero-layout -->
@@ -2173,28 +2148,15 @@
           datasets: [{
             label: 'AI Overview Keywords',
             data: [3, 3, 5, 9, 11, 8],
-            backgroundColor: [
-              'rgba(99,102,241,0.5)',
-              'rgba(99,102,241,0.5)',
-              'rgba(99,102,241,0.6)',
-              'rgba(139,92,246,0.7)',
-              'rgba(139,92,246,0.85)',
-              'rgba(99,102,241,0.65)'
-            ],
-            borderColor: [
-              'rgba(99,102,241,0.9)',
-              'rgba(99,102,241,0.9)',
-              'rgba(99,102,241,1)',
-              'rgba(139,92,246,1)',
-              'rgba(139,92,246,1)',
-              'rgba(99,102,241,1)'
-            ],
+            backgroundColor: 'rgba(0,212,170,0.5)',
+            borderColor: '#00D4AA',
             borderWidth: 1,
             borderRadius: 4
           }]
         },
         options: {
-          responsive: false,
+          responsive: true,
+          maintainAspectRatio: false,
           plugins: {
             legend: { display: false },
             tooltip: {
