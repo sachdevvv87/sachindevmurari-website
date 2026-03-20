@@ -299,14 +299,62 @@
       background-clip: text;
     }
 
+    .gradient-text {
+      background: linear-gradient(135deg, #00D4AA, #6C5CE7);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
     .hero-sub {
       font-size: 18px;
       line-height: 1.7;
       color: var(--subtle);
       max-width: 640px;
-      margin-bottom: 48px;
+      margin-bottom: 20px;
       animation: fadeUp .7s .2s ease both;
     }
+
+    .hero-authority {
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 28px;
+      animation: fadeUp .7s .25s ease both;
+    }
+
+    .hero-trust-strip {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+      animation: fadeUp .7s .4s ease both;
+    }
+    .trust-label {
+      font-size: 12px;
+      color: var(--muted);
+      font-weight: 500;
+    }
+    .trust-pill {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--subtle);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      padding: 4px 12px;
+    }
+
+    .btn-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--subtle);
+      font-size: 15px;
+      font-weight: 500;
+      padding: 14px 8px;
+      transition: color .2s;
+    }
+    .btn-link:hover { color: var(--text); }
 
     .hero-actions {
       display: flex;
@@ -918,25 +966,25 @@
       margin-top: -2px;
     }
 
-    .chart-panel-title {
-      font-size: 14px;
+    .hero-metric-block {
+      padding: 24px 0;
+    }
+    .hero-metric-block + .hero-metric-block {
+      border-top: 1px solid var(--border);
+    }
+    .metric-val {
+      font-family: 'DM Serif Display', serif;
+      font-size: 52px;
       font-weight: 700;
-      color: var(--text);
-      margin-bottom: 4px;
-      letter-spacing: -0.2px;
+      letter-spacing: -2px;
+      line-height: 1;
+      margin-bottom: 8px;
     }
-
-    .chart-panel-subtitle {
-      font-size: 12px;
+    .metric-label {
+      font-size: 13px;
       color: var(--muted);
-      margin-bottom: 20px;
       font-weight: 500;
-    }
-
-    .chart-panel-canvas-wrap {
-      position: relative;
-      width: 100%;
-      flex: 1;
+      line-height: 1.4;
     }
 
     /* ── FEATURED WORK ───────────────────────────────────────────── */
@@ -1090,7 +1138,6 @@
       }
       .hero-inner { max-width: 100%; }
       .hero-chart-panel { padding: 20px; }
-      .chart-panel-canvas-wrap { min-height: 200px; }
       .hero-badge {
         font-size: 11px;
         padding: 5px 12px 5px 7px;
@@ -1387,58 +1434,45 @@
     <div class="hero-inner">
       <div class="hero-badge" aria-label="Specialty">
         <span class="dot" aria-hidden="true"></span>
-        Top Digital Marketing Agency USA
+        AI Visibility for SaaS and Enterprise
       </div>
 
       <!-- H1 - primary keyword-rich heading -->
       <h1 class="hero-title">
-        The <span class="highlight">best SEO &amp; AEO</span><br>
-        service for SaaS &amp;<br>
-        enterprise brands.
+        Get Your Brand Featured in <span class="gradient-text">AI Answers</span> — Not Just Search Results
       </h1>
 
       <p class="hero-sub">
-        I'm Sachin Devmurari, a B2B content strategist offering the best digital marketing service, answer engine optimization (AEO), generative engine optimization (GEO), and content writing agency USA expertise. I help SaaS startups and enterprise tech brands grow traffic, authority, and revenue.
+        AI search is replacing traditional SEO. I help SaaS and enterprise brands show up in ChatGPT, Google AI Overviews, and generative search results to drive qualified traffic, authority, and pipeline.
       </p>
 
+      <p class="hero-authority">Trusted by SaaS teams to turn content into AI-cited, revenue-driving assets</p>
+
       <div class="hero-actions">
-        <a href="#services" class="btn-primary">Explore Services →</a>
-        <a href="#results" class="btn-ghost">See Results ↓</a>
+        <a href="contact.html" class="btn-primary">Get AI Visibility Audit →</a>
+        <a href="#results" class="btn-link">View AI Growth Results ↓</a>
       </div>
 
-      <div class="hero-stats" aria-label="Key statistics">
-        <div>
-          <div class="stat-val">4K+</div>
-          <div class="stat-label">LinkedIn Followers</div>
-        </div>
-        <div>
-          <div class="stat-val">6+</div>
-          <div class="stat-label">Years Experience</div>
-        </div>
-        <div>
-          <div class="stat-val">50+</div>
-          <div class="stat-label">Brands Served</div>
-        </div>
-        <div>
-          <div class="stat-val">3x</div>
-          <div class="stat-label">AI Citations Growth</div>
-        </div>
+      <div class="hero-trust-strip">
+        <span class="trust-label">Featured in AI answers across:</span>
+        <span class="trust-pill">ChatGPT</span>
+        <span class="trust-pill">Google AI Overviews</span>
+        <span class="trust-pill">Perplexity</span>
       </div>
     </div><!-- /.hero-inner -->
 
-    <!-- ══ HERO CHART: AI Overview Keyword Growth ══════════════════
-         Real client data — update chartData/chartLabels in the
-         <script> block at the bottom of this file to change values.
-         Month   : Oct'25  Nov'25  Dec'25  Jan'26  Feb'26  Mar'26
-         Keywords: 3       3       5       9       11      8
-    ════════════════════════════════════════════════════════════════ -->
-    <div class="hero-chart-panel" aria-label="Client traffic growth chart">
-      <div class="chart-panel-title">AI Overview Keyword Growth</div>
-      <div class="chart-panel-subtitle">Client organic visibility in Google AI Overviews</div>
-      <div class="chart-panel-canvas-wrap">
-        <canvas id="heroTrafficChart"
-          aria-label="Bar chart showing AI Overview keyword growth from 3 in Oct 2025 to 8 in Mar 2026">
-        </canvas>
+    <div class="hero-chart-panel" aria-label="AI visibility results">
+      <div class="hero-metric-block">
+        <div class="metric-val gradient-text">+312%</div>
+        <div class="metric-label">AI search visibility</div>
+      </div>
+      <div class="hero-metric-block">
+        <div class="metric-val">Featured</div>
+        <div class="metric-label">in ChatGPT and Google AI Overviews</div>
+      </div>
+      <div class="hero-metric-block">
+        <div class="metric-val gradient-text">4.2x</div>
+        <div class="metric-label">increase in high-intent traffic</div>
       </div>
     </div>
 
@@ -2077,100 +2111,5 @@
     });
   </script>
 
-  <!-- ── Chart.js CDN (used for hero traffic chart) ── -->
-  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
-  <!-- ── Chart init: this <script> runs synchronously after the CDN above,
-       so Chart is guaranteed to be defined — no event listener needed. ── -->
-  <script>
-    // ══ HERO TRAFFIC CHART ════════════════════════════════════════════
-    // Update the arrays below to change the chart values.
-    //   chartLabels : month names shown on the X-axis
-    //   chartData   : AI Overview keyword counts for each month
-    //
-    //   Oct 2025  Nov 2025  Dec 2025  Jan 2026  Feb 2026  Mar 2026
-    //   3         3         5         9         11        8
-    // ══════════════════════════════════════════════════════════════════
-    (function () {
-      const chartLabels = ["Oct '25", "Nov '25", "Dec '25", "Jan '26", "Feb '26", "Mar '26"];
-      const chartData   = [3, 3, 5, 9, 11, 8]; // ← swap values here
-
-      const canvas = document.getElementById('heroTrafficChart');
-      if (!canvas) return;
-
-      const ctx = canvas.getContext('2d');
-
-      // Gradient: teal (top) → purple (bottom)
-      const grad = ctx.createLinearGradient(0, 0, 0, 280);
-      grad.addColorStop(0,   'rgba(0, 212, 170, 0.92)');   // --accent
-      grad.addColorStop(1,   'rgba(108, 92, 231, 0.80)');  // --primary
-
-      new Chart(ctx, {
-        type: 'bar',
-        data: {
-          labels: chartLabels,
-          datasets: [{
-            label: 'Organic Visitors',
-            data: chartData,
-            backgroundColor: grad,
-            borderRadius: 8,
-            borderSkipped: false,
-            borderColor: 'transparent',
-          }]
-        },
-        options: {
-          responsive: true,
-          maintainAspectRatio: false,
-          animation: {
-            duration: 900,
-            easing: 'easeOutQuart',
-            delay: function (context) {
-              return context.dataIndex * 110; // staggered slide-up per bar
-            }
-          },
-          plugins: {
-            legend: { display: false },
-            tooltip: {
-              backgroundColor: 'rgba(14, 17, 23, 0.95)',
-              borderColor: 'rgba(108, 92, 231, 0.4)',
-              borderWidth: 1,
-              titleColor: '#ffffff',
-              bodyColor: '#8892A4',
-              padding: 12,
-              cornerRadius: 10,
-              callbacks: {
-                label: function (ctx) {
-                  return ' ' + ctx.parsed.y + ' keywords';
-                }
-              }
-            }
-          },
-          scales: {
-            x: {
-              grid: { display: false },
-              border: { display: false },
-              ticks: {
-                color: '#8892A4',
-                font: { family: 'Inter', size: 12, weight: '500' }
-              }
-            },
-            y: {
-              grid: { color: 'rgba(255,255,255,0.05)' },
-              border: { display: false, dash: [4, 4] },
-              ticks: {
-                color: '#8892A4',
-                font: { family: 'Inter', size: 11 },
-                maxTicksLimit: 6,
-                stepSize: 2,
-                callback: function (val) {
-                  return Number.isInteger(val) ? val : ''; // whole numbers only (Keywords)
-                }
-              }
-            }
-          }
-        }
-      });
-    })();
-    // ══ END HERO TRAFFIC CHART ═════════════════════════════════════════
-  </script>
 </body>
 </html>
