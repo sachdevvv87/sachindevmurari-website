@@ -897,7 +897,7 @@
       display: grid;
       grid-template-columns: 55fr 45fr;
       gap: 60px;
-      align-items: stretch;
+      align-items: flex-start;
       width: 100%;
       max-width: 1400px;
     }
@@ -912,7 +912,7 @@
       -webkit-backdrop-filter: blur(16px);
       animation: fadeUp .7s .45s ease both;
       box-shadow: 0 0 60px rgba(108, 92, 231, 0.1), inset 0 1px 0 rgba(255,255,255,0.05);
-      height: 100%;
+      min-height: 420px;
       display: flex;
       flex-direction: column;
     }
@@ -1897,17 +1897,18 @@
 
   <!-- ── Chart.js CDN (used for hero traffic chart) ── -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
-
+  <!-- ── Chart init: this <script> runs synchronously after the CDN above,
+       so Chart is guaranteed to be defined — no event listener needed. ── -->
   <script>
     // ══ HERO TRAFFIC CHART ════════════════════════════════════════════
-    // Placeholder data — update the arrays below to change the chart.
+    // Update the arrays below to change the chart values.
     //   chartLabels : month names shown on the X-axis
     //   chartData   : AI Overview keyword counts for each month
     //
     //   Oct 2025  Nov 2025  Dec 2025  Jan 2026  Feb 2026  Mar 2026
     //   3         3         5         9         11        8
     // ══════════════════════════════════════════════════════════════════
-    window.addEventListener('load', function () {
+    (function () {
       const chartLabels = ['Oct '25', 'Nov '25', 'Dec '25', 'Jan '26', 'Feb '26', 'Mar '26'];
       const chartData   = [3, 3, 5, 9, 11, 8]; // ← swap values here
 
@@ -1986,7 +1987,7 @@
           }
         }
       });
-    }); // end window.addEventListener('load', ...)
+    })();
     // ══ END HERO TRAFFIC CHART ═════════════════════════════════════════
   </script>
 </body>
