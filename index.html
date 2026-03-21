@@ -1502,8 +1502,8 @@
 
     <div class="hero-chart-panel" aria-label="AI visibility results">
       <div class="chart-card-header">
-        <span class="chart-card-title">Client AI Visibility: 0 → 11 Keywords</span>
-        <span class="chart-card-subtitle">+267% growth in 6 months</span>
+        <span class="chart-card-title">Client AI Visibility Growth</span>
+        <span class="chart-card-subtitle">0 → 11 keywords in 6 months (+267%)</span>
       </div>
       <div style="width:100%;height:200px"><canvas id="heroTrafficChart" aria-label="Bar chart showing AI keyword visibility growth from 0 to 11 keywords, Oct 2025 to Mar 2026"></canvas></div>
     </div>
@@ -2147,117 +2147,73 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
   <script>
     (function () {
-      var canvas = document.getElementById('heroTrafficChart');
-      if (!canvas) return;
+      function initChart() {
+        var canvas = document.getElementById('heroTrafficChart');
+        if (!canvas) return;
+        var ctx = canvas.getContext('2d');
 
-      var chartData = [3, 3, 5, 9, 11, 8];
-      var labels    = ["Oct '25", "Nov '25", "Dec '25", "Jan '26", "Feb '26", "Mar '26"];
-      var hoveredIndex = null;
+        // Teal gradient fill
+        var gradient = ctx.createLinearGradient(0, 0, 0, canvas.offsetHeight || 220);
+        gradient.addColorStop(0, 'rgba(0, 212, 170, 0.95)');
+        gradient.addColorStop(1, 'rgba(0, 212, 170, 0.15)');
 
-      function barColor(context) {
-        var chart     = context.chart;
-        var ctx2      = chart.ctx;
-        var chartArea = chart.chartArea;
-        if (!chartArea) return '#00D4AA';
-        var i  = context.dataIndex;
-        var g  = ctx2.createLinearGradient(0, chartArea.top, 0, chartArea.bottom);
-        if (hoveredIndex === null) {
-          g.addColorStop(0, '#00D4AA');
-          g.addColorStop(1, 'rgba(0,212,170,0.08)');
-        } else if (i === hoveredIndex) {
-          g.addColorStop(0, '#00FFD1');
-          g.addColorStop(1, 'rgba(0,255,209,0.12)');
-        } else {
-          g.addColorStop(0, 'rgba(0,212,170,0.35)');
-          g.addColorStop(1, 'rgba(0,212,170,0.02)');
-        }
-        return g;
-      }
-
-      new Chart(canvas, {
-        type: 'bar',
-        data: {
-          labels: labels,
-          datasets: [{
-            label: 'AI Overview Keywords',
-            data: chartData,
-            backgroundColor: barColor,
-            borderColor: 'transparent',
-            borderWidth: 0,
-            borderRadius: 8,
-            borderSkipped: false
-          }]
-        },
-        options: {
-          responsive: true,
-          maintainAspectRatio: false,
-          animation: { duration: 1200, easing: 'easeOutQuart' },
-          plugins: {
-            legend: { display: false },
-            tooltip: {
-              backgroundColor: '#1a1a2e',
-              borderColor: '#00D4AA',
+        new Chart(ctx, {
+          type: 'bar',
+          data: {
+            labels: ["Oct '25", "Nov '25", "Dec '25", "Jan '26", "Feb '26", "Mar '26"],
+            datasets: [{
+              label: 'AI Overview Keywords',
+              data: [3, 3, 5, 9, 11, 8],
+              backgroundColor: gradient,
+              borderColor: 'rgba(0, 212, 170, 1)',
               borderWidth: 1,
-              titleColor: 'rgba(255,255,255,0.9)',
-              bodyColor: 'rgba(255,255,255,0.7)',
-              padding: 10,
-              cornerRadius: 6,
-              callbacks: {
-                title: function(items) { return items[0].label; },
-                label: function(ctx) { return ' ' + ctx.parsed.y + ' AI keywords tracked'; }
+              borderRadius: 6,
+              borderSkipped: false
+            }]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            animation: {
+              duration: 1200,
+              easing: 'easeOutQuart'
+            },
+            plugins: {
+              legend: { display: false },
+              tooltip: {
+                backgroundColor: 'rgba(10, 10, 30, 0.95)',
+                borderColor: 'rgba(0, 212, 170, 0.6)',
+                borderWidth: 1,
+                titleColor: '#00D4AA',
+                bodyColor: '#e0e0e0',
+                padding: 10,
+                callbacks: {
+                  label: function(context) {
+                    return context.parsed.y + ' AI keywords tracked';
+                  }
+                }
+              }
+            },
+            scales: {
+              x: {
+                grid: { display: false },
+                border: { display: false },
+                ticks: { color: 'rgba(255,255,255,0.6)', font: { size: 11 } }
+              },
+              y: {
+                display: false,
+                grid: { display: false }
               }
             }
-          },
-          onHover: function(event, activeElements, chart) {
-            var newIdx = activeElements.length > 0 ? activeElements[0].index : null;
-            if (newIdx !== hoveredIndex) {
-              hoveredIndex = newIdx;
-              chart.canvas.style.cursor = newIdx !== null ? 'pointer' : 'default';
-              chart.update('none');
-            }
-          },
-          scales: {
-            x: {
-              ticks: { color: 'rgba(255,255,255,0.6)', font: { size: 10, family: 'Inter, sans-serif' } },
-              grid: { display: false },
-              border: { display: false }
-            },
-            y: {
-              beginAtZero: true,
-              min: 0,
-              max: 12,
-              ticks: {
-                color: 'rgba(255,255,255,0.5)',
-                font: { size: 10, family: 'Inter, sans-serif' },
-                stepSize: 4,
-                callback: function(val) { return [0, 4, 8, 12].indexOf(val) !== -1 ? val : ''; }
-              },
-              grid: {
-                color: 'rgba(255,255,255,0.08)',
-                lineWidth: 1,
-                borderDash: [4, 4]
-              },
-              border: { display: false }
-            }
           }
-        },
-        plugins: [{
-          id: 'peakLabel',
-          afterDatasetsDraw: function(chart) {
-            var ctx2 = chart.ctx;
-            var meta = chart.getDatasetMeta(0);
-            var peakIdx = 4; // Feb '26 = 11 keywords
-            var bar = meta.data[peakIdx];
-            if (!bar) return;
-            ctx2.save();
-            ctx2.font = '600 9px Inter, sans-serif';
-            ctx2.fillStyle = hoveredIndex === null || hoveredIndex === peakIdx ? '#00D4AA' : 'rgba(0,212,170,0.45)';
-            ctx2.textAlign = 'center';
-            ctx2.fillText('Peak: 11 kws', bar.x, bar.y - 6);
-            ctx2.restore();
-          }
-        }]
-      });
+        });
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initChart);
+      } else {
+        initChart();
+      }
     })();
   </script>
 
