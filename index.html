@@ -317,9 +317,9 @@
 
     .hero-title {
       font-family: 'DM Serif Display', serif;
-      font-size: clamp(52px, 7vw, 88px);
-      line-height: 1.05;
-      letter-spacing: -2px;
+      font-size: clamp(40px, 5vw, 60px);
+      line-height: 1.08;
+      letter-spacing: -1.5px;
       margin-bottom: 28px;
       animation: fadeUp .7s .1s ease both;
     }
@@ -1184,7 +1184,7 @@
         flex-wrap: wrap;
       }
       .hero-title {
-        font-size: clamp(38px, 10vw, 56px);
+        font-size: clamp(30px, 8vw, 46px);
         letter-spacing: -1px;
         margin-bottom: 20px;
       }
@@ -1350,7 +1350,7 @@
       /* --- HERO --- */
       .hero { padding: 88px 16px 64px; }
       .hero-title {
-        font-size: clamp(32px, 9vw, 44px);
+        font-size: clamp(26px, 7.5vw, 36px);
         letter-spacing: -0.5px;
       }
       .hero-sub { font-size: 14px; line-height: 1.65; }
@@ -1505,7 +1505,7 @@
         <span class="chart-card-title">Client AI Visibility Growth</span>
         <span class="chart-card-subtitle">0 → 11 keywords in 6 months (+267%)</span>
       </div>
-      <div style="width:100%;height:200px"><canvas id="heroTrafficChart" aria-label="Bar chart showing AI keyword visibility growth from 0 to 11 keywords, Oct 2025 to Mar 2026"></canvas></div>
+      <div style="width:100%;height:220px"><canvas id="heroTrafficChart" aria-label="Bar chart showing AI keyword visibility growth from 0 to 11 keywords, Oct 2025 to Mar 2026"></canvas></div>
     </div>
 
     </div><!-- /.hero-layout -->
@@ -2145,8 +2145,11 @@
 
   <!-- Chart.js for hero bar chart -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0/dist/chartjs-plugin-datalabels.min.js"></script>
   <script>
     (function () {
+      Chart.register(ChartDataLabels);
+
       function initChart() {
         var canvas = document.getElementById('heroTrafficChart');
         if (!canvas) return;
@@ -2155,7 +2158,7 @@
         // Teal gradient fill
         var gradient = ctx.createLinearGradient(0, 0, 0, canvas.offsetHeight || 220);
         gradient.addColorStop(0, 'rgba(0, 212, 170, 0.95)');
-        gradient.addColorStop(1, 'rgba(0, 212, 170, 0.15)');
+        gradient.addColorStop(1, 'rgba(0, 212, 170, 0.20)');
 
         new Chart(ctx, {
           type: 'bar',
@@ -2165,9 +2168,9 @@
               label: 'AI Overview Keywords',
               data: [3, 3, 5, 9, 11, 8],
               backgroundColor: gradient,
-              borderColor: 'rgba(0, 212, 170, 1)',
-              borderWidth: 1,
-              borderRadius: 6,
+              borderColor: 'rgba(0, 212, 170, 0)',
+              borderWidth: 0,
+              borderRadius: 8,
               borderSkipped: false
             }]
           },
@@ -2180,6 +2183,14 @@
             },
             plugins: {
               legend: { display: false },
+              datalabels: {
+                anchor: 'end',
+                align: 'end',
+                offset: 2,
+                color: 'rgba(255,255,255,0.85)',
+                font: { family: "'Inter', sans-serif", size: 11, weight: '600' },
+                formatter: function(value) { return value; }
+              },
               tooltip: {
                 backgroundColor: 'rgba(10, 10, 30, 0.95)',
                 borderColor: 'rgba(0, 212, 170, 0.6)',
@@ -2202,8 +2213,12 @@
               },
               y: {
                 display: false,
-                grid: { display: false }
+                grid: { display: false },
+                max: 13
               }
+            },
+            layout: {
+              padding: { top: 20, bottom: 0, left: 0, right: 0 }
             }
           }
         });
