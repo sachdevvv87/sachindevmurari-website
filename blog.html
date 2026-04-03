@@ -137,20 +137,23 @@
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-      background-color: #030615;
-      background-blend-mode: multiply;
+      background-color: #01040a;
+      background-blend-mode: screen;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      gap: 16px;
       isolation: isolate;
+      filter: saturate(1.08);
     }
     .blog-thumb::after {
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(120deg, rgba(3, 6, 21, 0.35), rgba(3, 6, 21, 0.75) 60%);
+      background: radial-gradient(circle at 20% 20%, rgba(0, 212, 170, 0.25), rgba(3, 6, 21, 0.85) 60%);
       pointer-events: none;
       z-index: 1;
+      mix-blend-mode: screen;
     }
     .blog-thumb > * {
       position: relative;
