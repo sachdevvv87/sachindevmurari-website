@@ -821,10 +821,22 @@
     /* ── BLOG ────────────────────────────────────────────────────── */
     .blog-inner { max-width: 1200px; margin: 0 auto; }
     .blog-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 56px; }
-    .blog-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 24px; }
+    .blog-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr;
+      gap: 24px;
+      align-items: stretch;
+      grid-auto-rows: 1fr;
+    }
     .blog-card {
-      background: var(--surface); border: 1px solid var(--border);
-      border-radius: var(--r-lg); overflow: hidden; transition: transform .25s, border-color .25s;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      overflow: hidden;
+      transition: transform .25s, border-color .25s;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
     }
     .blog-card:hover { transform: translateY(-6px); border-color: rgba(108,92,231,0.3); }
     .blog-thumb {
@@ -1316,7 +1328,12 @@
         gap: 16px;
         margin-bottom: 36px;
       }
-      .blog-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
+      .blog-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        align-items: stretch;
+        grid-auto-rows: 1fr;
+      }
       .blog-card:first-child .blog-thumb { height: 200px; }
       .blog-card:first-child .blog-title { font-size: 17px; }
 
@@ -1411,7 +1428,11 @@
       .testi-card { padding: 20px; }
 
       /* --- BLOG --- */
-      .blog-grid { grid-template-columns: 1fr; }
+      .blog-grid {
+        grid-template-columns: 1fr;
+        align-items: stretch;
+        grid-auto-rows: 1fr;
+      }
       .blog-thumb { height: 180px !important; }
 
       /* --- CTA --- */
@@ -1458,6 +1479,7 @@
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#services">Services</a></li>
+      <li><a href="blog.html">Blog</a></li>
       <li><a href="#aeo">AEO / GEO</a></li>
       <li><a href="#results">Results</a></li>
       <li><a href="#faq">FAQ</a></li>
