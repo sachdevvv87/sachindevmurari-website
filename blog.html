@@ -130,25 +130,33 @@
       border-color: rgba(255, 255, 255, 0.3);
     }
 
-    .blog-thumb {
+        .blog-thumb {
       position: relative;
       padding: 30px;
       min-height: 170px;
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-      background-blend-mode: overlay;
+      background-color: #030615;
+      background-blend-mode: multiply;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      isolation: isolate;
     }
     .blog-thumb::after {
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(180deg, transparent, rgba(7, 9, 15, 0.85));
+      background: linear-gradient(180deg, rgba(7, 9, 15, 0.5), rgba(7, 9, 15, 0.9));
+      pointer-events: none;
+      z-index: 1;
     }
-    .blog-cat {
+    .blog-thumb > * {
+      position: relative;
+      z-index: 2;
+    }
+.blog-cat {
       position: relative;
       font-size: 12px;
       letter-spacing: 2px;
