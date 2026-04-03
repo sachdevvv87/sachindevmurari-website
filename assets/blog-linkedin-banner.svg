@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1400" height="600" viewBox="0 0 1400 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg-gradient" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#03060f" />
+      <stop offset="45%" stop-color="#070f26" />
+      <stop offset="100%" stop-color="#0c1430" />
+    </linearGradient>
+    <linearGradient id="grid-fade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="rgba(255,255,255,0.12)" />
+      <stop offset="100%" stop-color="rgba(255,255,255,0)" />
+    </linearGradient>
+    <linearGradient id="bar-gradient" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#00d4aa" />
+      <stop offset="100%" stop-color="#0a66c2" />
+    </linearGradient>
+    <linearGradient id="line-gradient" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0a66c2" />
+      <stop offset="100%" stop-color="#00d4aa" />
+    </linearGradient>
+    <linearGradient id="arrow-gradient" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#00d4aa" />
+      <stop offset="100%" stop-color="#6c5ce7" />
+    </linearGradient>
+  </defs>
+  <rect width="1400" height="600" fill="url(#bg-gradient)" />
+  <g stroke="rgba(255,255,255,0.08)" stroke-width="1">
+    <line x1="0" y1="120" x2="1400" y2="120" />
+    <line x1="0" y1="220" x2="1400" y2="220" />
+    <line x1="0" y1="320" x2="1400" y2="320" />
+    <line x1="0" y1="420" x2="1400" y2="420" />
+    <line x1="0" y1="520" x2="1400" y2="520" />
+    <line x1="440" y1="0" x2="440" y2="600" />
+    <line x1="700" y1="0" x2="700" y2="600" />
+    <line x1="1000" y1="0" x2="1000" y2="600" />
+  </g>
+  <g opacity="0.35">
+    <rect x="120" y="80" width="520" height="140" rx="28" fill="url(#grid-fade)" />
+    <rect x="130" y="100" width="500" height="100" rx="20" fill="rgba(255,255,255,0.04)" />
+    <text x="172" y="142" font-family="Inter, Arial, sans-serif" font-size="34" fill="#fff">LinkedIn Growth</text>
+    <text x="172" y="182" font-family="Inter, Arial, sans-serif" font-size="18" fill="rgba(255,255,255,0.7)">Blueprint 2026 · pipeline-led</text>
+  </g>
+  <path d="M260 450 Q420 360 560 390 T820 300 T1080 230" stroke="url(#line-gradient)" stroke-width="14" stroke-linecap="round" fill="none" opacity="0.9" />
+  <g stroke="url(#line-gradient)" stroke-width="18" stroke-linecap="round">
+    <line x1="320" y1="470" x2="420" y2="360" />
+    <line x1="420" y1="360" x2="560" y2="390" />
+    <line x1="560" y1="390" x2="720" y2="340" />
+    <line x1="720" y1="340" x2="880" y2="280" />
+  </g>
+  <g fill="url(#bar-gradient)" fill-opacity="0.92">
+    <rect x="540" y="300" width="60" height="220" rx="14" />
+    <rect x="660" y="260" width="60" height="260" rx="14" />
+    <rect x="780" y="220" width="60" height="300" rx="14" />
+    <rect x="900" y="200" width="60" height="320" rx="14" />
+  </g>
+  <g fill="#fff" font-family="Inter, Arial, sans-serif" font-size="16" letter-spacing="0.08em">
+    <text x="548" y="545" fill="rgba(255,255,255,0.7)">Profile</text>
+    <text x="668" y="545" fill="rgba(255,255,255,0.7)">Intent</text>
+    <text x="788" y="545" fill="rgba(255,255,255,0.7)">Paid</text>
+    <text x="908" y="545" fill="rgba(255,255,255,0.7)">Pipeline</text>
+  </g>
+  <g stroke="rgba(255,255,255,0.25)" stroke-width="4">
+    <circle cx="420" cy="360" r="12" fill="#fff" />
+    <circle cx="560" cy="390" r="12" fill="#fff" />
+    <circle cx="720" cy="340" r="12" fill="#fff" />
+    <circle cx="880" cy="280" r="12" fill="#fff" />
+  </g>
+  <path d="M1180 160 L1300 280 L1180 400" stroke="url(#arrow-gradient)" stroke-width="28" stroke-linecap="round" />
+  <path d="M1300 280 L1060 280" stroke="url(#arrow-gradient)" stroke-width="18" stroke-linecap="round" stroke-linejoin="round" />
+  <circle cx="1300" cy="280" r="46" stroke="url(#arrow-gradient)" stroke-width="3" fill="none" />
+  <circle cx="1180" cy="280" r="14" fill="#fff" opacity="0.8" />
+  <rect x="1020" y="120" width="180" height="120" rx="28" fill="#0f192c" stroke="rgba(255,255,255,0.2)" stroke-width="1.8" />
+  <rect x="1040" y="152" width="54" height="54" rx="14" fill="#0a66c2" />
+  <text x="1068" y="188" font-family="Inter, Arial, sans-serif" font-size="42" fill="#fff">in</text>
+  <rect x="1120" y="152" width="180" height="16" rx="8" fill="rgba(255,255,255,0.15)" />
+  <rect x="1120" y="182" width="130" height="14" rx="7" fill="rgba(255,255,255,0.15)" />
+  <rect x="1120" y="212" width="160" height="14" rx="7" fill="rgba(255,255,255,0.15)" />
+  <path d="M380 200 L460 150 L540 220 L520 260 L440 220 Z" fill="rgba(0,212,170,0.18)" />
+  <path d="M240 360 L360 260 L420 360 L300 420 Z" fill="#6c5ce7" fill-opacity="0.2" />
+  <path d="M300 520 L420 420 L520 520 L420 560 Z" fill="rgba(255,255,255,0.05)" />
+  <text x="300" y="512" font-family="Inter, Arial, sans-serif" font-size="22" fill="#fff">24% reach drop</text>
+  <text x="300" y="542" font-family="Inter, Arial, sans-serif" font-size="18" fill="rgba(255,255,255,0.7)">Company pages vs. profiles</text>
+</svg>

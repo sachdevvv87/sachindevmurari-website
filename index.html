@@ -828,7 +828,14 @@
     }
     .blog-card:hover { transform: translateY(-6px); border-color: rgba(108,92,231,0.3); }
     .blog-thumb {
-      height: 200px; background: var(--surface2); position: relative; overflow: hidden;
+      height: 200px;
+      background: var(--surface2);
+      position: relative;
+      overflow: hidden;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-blend-mode: overlay;
     }
     .blog-card:first-child .blog-thumb { height: 280px; }
     .blog-thumb-bg {
@@ -1946,7 +1953,7 @@
       <div class="blog-grid">
 
           <a class="blog-card reveal" href="posts/b2b-linkedin-growth-strategy-2026.html">
-            <div class="blog-thumb" style="background:linear-gradient(135deg,#0A103E,#0D1540)">
+          <div class="blog-thumb" style="background-image: linear-gradient(135deg, rgba(7,9,15,0.85), rgba(7,9,15,0.3)), url('assets/blog-linkedin-banner.svg');">
               <span class="blog-cat">LinkedIn</span>
               <div class="blog-emoji">💼</div>
             </div>
@@ -1957,7 +1964,7 @@
             </div>
           </a>
                 <a class="blog-card reveal" href="posts/aeo-guide-2026.html">
-                            <div class="blog-thumb" style="background:linear-gradient(135deg,#07090F 0%,#0d1020 60%,#07090F 100%);">
+            <div class="blog-thumb" style="background-image: linear-gradient(135deg, rgba(7,9,15,0.85), rgba(7,9,15,0.3)), url('assets/blog-aeo-banner.svg');">
                                         <span class="blog-cat">AEO / GEO</span>
                                                     <div class="blog-emoji">🤖</div>
                                                               </div>

@@ -200,24 +200,19 @@
       .post-title { font-size: 32px; }
       .stat-row { flex-direction: column; }
     }
-        /* POST BANNER */
-            .post-banner{position:relative;max-width:860px;margin:32px auto 0;padding:0 60px;}
-                .post-banner-inner{position:relative;overflow:hidden;border-radius:16px;border:1px solid rgba(255,255,255,0.07);background:linear-gradient(135deg,#07090F 0%,#0d1020 60%,#07090F 100%);min-height:220px;display:flex;align-items:center;}
-                    .banner-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.03) 1px,transparent 1px);background-size:50px 50px;}
-                        .banner-glow-p{position:absolute;width:400px;height:400px;top:-150px;left:-100px;border-radius:50%;background:rgba(108,92,231,0.2);filter:blur(80px);}
-                            .banner-glow-t{position:absolute;width:350px;height:350px;bottom:-100px;right:50px;border-radius:50%;background:rgba(108,92,231,0.2);filter:blur(80px);}
-                                .banner-ring{position:absolute;border-radius:50%;border:1px solid;}
-                                    .banner-ring-1{width:360px;height:360px;right:-100px;top:-100px;border-color:rgba(108,92,231,0.2);}
-                                        .banner-ring-2{width:260px;height:260px;right:-50px;top:-60px;border-color:rgba(0,212,170,0.15);}
-                                            .banner-ring-3{width:160px;height:160px;right:10px;top:-20px;border-color:rgba(108,92,231,0.15);}
-                                                .banner-content{position:relative;z-index:2;padding:48px;}
-                                                    .banner-cat-pill{display:inline-block;background:rgba(108,92,231,0.15);border:1px solid rgba(108,92,231,0.35);border-radius:100px;padding:3px 14px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:#A78BFA;margin-bottom:18px;}
-                                                        .banner-h{font-family:'DM Serif Display',serif;font-size:clamp(26px,3vw,40px);line-height:1.2;letter-spacing:-1px;color:#fff;margin-bottom:12px;}
-                                                            .banner-h span{color:#6C5CE7;}
-                                                                .banner-p{font-size:15px;color:rgba(196,205,217,0.8);line-height:1.6;max-width:480px;}
-                                                                    .banner-nodes-svg{position:absolute;right:0;top:0;bottom:0;width:45%;height:100%;z-index:1;}
-                                                                        .banner-brand-tag{position:absolute;bottom:14px;right:20px;z-index:2;font-size:11px;color:rgba(0,212,170,0.5);font-weight:500;}
-                                                                            @media(max-width:768px){.post-banner{padding:0 24px;}.banner-nodes-svg{display:none;}.banner-content{padding:32px 24px;}}
+    .post-banner-image {
+      max-width: 960px;
+      margin: 24px auto;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.4);
+    }
+    .post-banner-image img {
+      width: 100%;
+      display: block;
+      height: auto;
+    }
   </style>
 </head>
 <body>
@@ -238,40 +233,12 @@
     <div>
       <div class="byline-name">Sachin Devmurari</div>
       <div class="byline-meta">March 29, 2026 &nbsp;·&nbsp; 12 min read</div>
+      </div>
     </div>
   </div>
-</div>
-      <!-- BLOG BANNER -->
-            <div class="post-banner">
-                    <div class="post-banner-inner">
-                              <div class="banner-grid"></div>
-                                        <div class="banner-glow-p"></div>
-                                                  <div class="banner-glow-t"></div>
-                                                            <div class="banner-ring banner-ring-1"></div>
-                                                                      <div class="banner-ring banner-ring-2"></div>
-                                                                                <div class="banner-ring banner-ring-3"></div>
-                                                                                          <div class="banner-content">
-                                                                                                      <span class="banner-cat-pill">LinkedIn</span>
-                                                                                                                  <h2 class="banner-h">B2B LinkedIn<br><span>Blueprint</span> 2026</h2>
-                                                                                                                              <p class="banner-p">Build a growth strategy that drives inbound pipeline</p>
-                                                                                                                                        </div>
-                                                                                                                                                  <svg class="banner-nodes-svg" viewBox="0 0 600 350" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation">
-                                                                                                                                                              <g stroke="#6C5CE7" stroke-opacity="0.2" fill="none">
-                                                                                                                                                                            <line x1="450" y1="40" x2="520" y2="120"/><line x1="520" y1="120" x2="480" y2="200"/>
-                                                                                                                                                                                          <line x1="480" y1="200" x2="540" y2="280"/><line x1="450" y1="40" x2="560" y2="80"/>
-                                                                                                                                                                                                        <line x1="560" y1="80" x2="540" y2="180"/><line x1="400" y1="100" x2="450" y2="40"/>
-                                                                                                                                                                                                                      <line x1="400" y1="100" x2="480" y2="200"/><line x1="400" y1="100" x2="350" y2="60"/>
-                                                                                                                                                                                                                                  </g>
-                                                                                                                                                                                                                                              <g fill="#6C5CE7" fill-opacity="0.5">
-                                                                                                                                                                                                                                                            <circle cx="450" cy="40" r="4"/><circle cx="520" cy="120" r="3"/>
-                                                                                                                                                                                                                                                                          <circle cx="480" cy="200" r="5"/><circle cx="540" cy="280" r="3"/>
-                                                                                                                                                                                                                                                                                        <circle cx="560" cy="80" r="4"/><circle cx="400" cy="100" r="3"/>
-                                                                                                                                                                                                                                                                                                      <circle cx="350" cy="60" r="4"/><circle cx="540" cy="180" r="3"/>
-                                                                                                                                                                                                                                                                                                                  </g>
-                                                                                                                                                                                                                                                                                                                            </svg>
-                                                                                                                                                                                                                                                                                                                                      <div class="banner-brand-tag">sachindevmurari.com</div>
-                                                                                                                                                                                                                                                                                                                                              </div>
-                                                                                                                                                                                                                                                                                                                                                    </div>-->
+  <div class="post-banner-image">
+    <img src="../assets/blog-linkedin-banner.svg" alt="LinkedIn growth illustration" loading="lazy" />
+  </div>
 <div class="post-body">
 
   <p>LinkedIn is the highest-value channel in B2B marketing right now, and most brands are using it wrong. They post from company pages that nobody follows, run lead gen forms that nobody fills, and wonder why their cost per qualified lead keeps climbing. The problem is not LinkedIn. The problem is a strategy built for 2019 running in 2026.</p>

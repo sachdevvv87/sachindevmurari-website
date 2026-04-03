@@ -136,6 +136,8 @@
       min-height: 170px;
       background-size: cover;
       background-position: center;
+      background-repeat: no-repeat;
+      background-blend-mode: overlay;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -235,7 +237,7 @@
     <section aria-label="Latest articles">
       <div class="blog-grid">
         <a class="blog-card" href="posts/b2b-linkedin-growth-strategy-2026.html">
-          <div class="blog-thumb" style="background-image: linear-gradient(135deg, #0c134f, #0d1540);">
+          <div class="blog-thumb" style="background-image: linear-gradient(135deg, rgba(7,9,15,0.85), rgba(7,9,15,0.4)), url('assets/blog-linkedin-banner.svg');">
             <span class="blog-cat">LinkedIn</span>
             <div class="blog-emoji">💼</div>
           </div>
@@ -250,7 +252,7 @@
         </a>
 
         <a class="blog-card" href="posts/aeo-guide-2026.html">
-          <div class="blog-thumb" style="background-image: linear-gradient(135deg, #0c0c16, #0d1b40);">
+          <div class="blog-thumb" style="background-image: linear-gradient(135deg, rgba(7,9,15,0.85), rgba(7,9,15,0.4)), url('assets/blog-aeo-banner.svg');">
             <span class="blog-cat">AEO / GEO</span>
             <div class="blog-emoji">🧠</div>
           </div>
