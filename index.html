@@ -858,7 +858,7 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(180deg, rgba(7, 9, 15, 0.5), rgba(7, 9, 15, 0.9));
+      background: linear-gradient(120deg, rgba(3, 6, 21, 0.45), rgba(3, 6, 21, 0.85) 60%);
       pointer-events: none;
       z-index: 1;
     }
@@ -877,7 +877,13 @@
       border-radius: 100px; padding: 4px 12px;
       font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;
     }
-    .blog-body { padding: 24px; }
+    .blog-body {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 10px;
+    }
     .blog-title {
       font-size: 17px; font-weight: 700; line-height: 1.4; letter-spacing: -0.3px; margin-bottom: 10px;
     }
