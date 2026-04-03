@@ -20,9 +20,7 @@
       --muted: #8892a4;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
@@ -32,10 +30,7 @@
       min-height: 100vh;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+    a { color: inherit; text-decoration: none; }
 
     header {
       padding: 18px 48px;
@@ -50,14 +45,8 @@
       justify-content: space-between;
     }
 
-    .logo {
-      font-weight: 700;
-      letter-spacing: -0.5px;
-      font-size: 20px;
-    }
-    .logo span {
-      color: var(--accent);
-    }
+    .logo { font-weight: 700; letter-spacing: -0.5px; font-size: 20px; }
+    .logo span { color: var(--accent); }
 
     .nav-links {
       display: flex;
@@ -66,9 +55,7 @@
       font-weight: 500;
       color: var(--muted);
     }
-    .nav-links a:hover {
-      color: var(--text);
-    }
+    .nav-links a:hover { color: var(--text); }
 
     .btn-primary {
       padding: 10px 26px;
@@ -79,13 +66,9 @@
       border: none;
       outline: none;
     }
-    .btn-primary:hover {
-      opacity: 0.95;
-    }
+    .btn-primary:hover { opacity: 0.95; }
 
-    main {
-      padding: 40px 48px 80px;
-    }
+    main { padding: 40px 48px 80px; }
 
     .hero {
       max-width: 960px;
@@ -98,16 +81,8 @@
       line-height: 1.1;
       margin-bottom: 16px;
     }
-    .hero p {
-      font-size: 18px;
-      color: var(--muted);
-      margin-bottom: 24px;
-    }
-
-    .hero span {
-      border-bottom: 1px solid var(--border);
-      padding-bottom: 8px;
-    }
+    .hero p { font-size: 18px; color: var(--muted); margin-bottom: 24px; }
+    .hero span { border-bottom: 1px solid var(--border); padding-bottom: 8px; }
 
     .blog-grid {
       display: grid;
@@ -130,57 +105,32 @@
       border-color: rgba(255, 255, 255, 0.3);
     }
 
-        .blog-thumb {
+    .blog-thumb {
       position: relative;
-      padding: 30px;
-      min-height: 170px;
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-color: #01040a;
-      background-blend-mode: screen;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      gap: 16px;
-      isolation: isolate;
-      filter: saturate(1.08);
+      height: 200px;
+      overflow: hidden;
     }
-    .blog-thumb::after {
-      content: '';
+    .blog-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+    .blog-card:hover .blog-thumb img { transform: scale(1.04); }
+    .blog-cat {
       position: absolute;
-      inset: 0;
-      background: radial-gradient(circle at 20% 20%, rgba(0, 212, 170, 0.25), rgba(3, 6, 21, 0.85) 60%);
-      pointer-events: none;
-      z-index: 1;
-      mix-blend-mode: screen;
-    }
-    .blog-thumb > * {
-      position: relative;
-      z-index: 2;
-    }
-'';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg, rgba(7, 9, 15, 0.5), rgba(7, 9, 15, 0.9));
-      pointer-events: none;
-      z-index: 1;
-    }
-    .blog-thumb > * {
-      position: relative;
-      z-index: 2;
-    }
-.blog-cat {
-      position: relative;
-      font-size: 12px;
+      top: 16px;
+      left: 16px;
+      font-size: 11px;
       letter-spacing: 2px;
       text-transform: uppercase;
-      font-weight: 600;
+      font-weight: 700;
       color: #fff;
-    }
-    .blog-emoji {
-      position: relative;
-      font-size: 32px;
+      background: rgba(108, 92, 231, 0.85);
+      backdrop-filter: blur(8px);
+      padding: 4px 12px;
+      border-radius: 999px;
     }
 
     .blog-body {
@@ -191,14 +141,8 @@
       gap: 12px;
       justify-content: space-between;
     }
-    .blog-body h3 {
-      font-size: 20px;
-      line-height: 1.4;
-    }
-    .blog-body p {
-      color: var(--muted);
-      font-size: 15px;
-    }
+    .blog-body h3 { font-size: 20px; line-height: 1.4; }
+    .blog-body p { color: var(--muted); font-size: 15px; }
     .blog-meta {
       margin-top: auto;
       display: flex;
@@ -216,14 +160,8 @@
       padding: 40px;
       text-align: center;
     }
-    .cta h2 {
-      font-size: clamp(28px, 4vw, 36px);
-      margin-bottom: 12px;
-    }
-    .cta p {
-      color: var(--muted);
-      margin-bottom: 24px;
-    }
+    .cta h2 { font-size: clamp(28px, 4vw, 36px); margin-bottom: 12px; }
+    .cta p { color: var(--muted); margin-bottom: 24px; }
 
     footer {
       padding: 32px 48px;
@@ -234,6 +172,13 @@
       gap: 12px;
       color: var(--muted);
       font-size: 13px;
+    }
+
+    @media (max-width: 768px) {
+      header { padding: 16px 24px; }
+      .nav-links { display: none; }
+      main { padding: 32px 24px 60px; }
+      footer { padding: 24px; }
     }
   </style>
 </head>
@@ -259,10 +204,11 @@
 
     <section aria-label="Latest articles">
       <div class="blog-grid">
+
         <a class="blog-card" href="posts/b2b-linkedin-growth-strategy-2026.html">
-          <div class="blog-thumb" style="background-image: linear-gradient(135deg, rgba(7,9,15,0.85), rgba(7,9,15,0.4)), url('assets/blog-linkedin-banner.svg');">
+          <div class="blog-thumb">
+            <img src="assets/banners/banner-linkedin-brand.png" alt="B2B LinkedIn Growth Strategy 2026" />
             <span class="blog-cat">LinkedIn</span>
-            <div class="blog-emoji">💼</div>
           </div>
           <div class="blog-body">
             <h3>The 2026 B2B LinkedIn Blueprint: How to Build a Growth Strategy That Drives Inbound Pipeline</h3>
@@ -275,9 +221,9 @@
         </a>
 
         <a class="blog-card" href="posts/aeo-guide-2026.html">
-          <div class="blog-thumb" style="background-image: linear-gradient(135deg, rgba(7,9,15,0.85), rgba(7,9,15,0.4)), url('assets/blog-aeo-banner.svg');">
+          <div class="blog-thumb">
+            <img src="assets/banners/banner-aeo-guide-2026.png" alt="Answer Engine Optimization in 2026" />
             <span class="blog-cat">AEO / GEO</span>
-            <div class="blog-emoji">🧠</div>
           </div>
           <div class="blog-body">
             <h3>Answer Engine Optimization in 2026: How to Get Your Brand Cited by ChatGPT, Perplexity &amp; Google SGE</h3>
@@ -290,12 +236,12 @@
         </a>
 
         <a class="blog-card" href="posts/b2b-saas-content-strategy-2026.html">
-          <div class="blog-thumb" style="background-image: linear-gradient(135deg, rgba(7,9,15,0.85), rgba(7,9,15,0.4)), url('assets/blog-b2b-saas-content-strategy-2026.svg');">
+          <div class="blog-thumb">
+            <img src="assets/banners/banner-topical-authority.png" alt="B2B SaaS Content Strategy 2026" />
             <span class="blog-cat">B2B SaaS</span>
-            <div class="blog-emoji">📊</div>
           </div>
           <div class="blog-body">
-            <h3>B2B SaaS content strategy 2026: What's Actually Changing</h3>
+            <h3>B2B SaaS Content Strategy 2026: What's Actually Changing</h3>
             <p>Zero-click search, AI content flooding, and GEO now redefine how SaaS owners build trust and pipeline.</p>
             <div class="blog-meta">
               <span>April 2026</span>
@@ -309,15 +255,15 @@
 
     <div class="cta">
       <h2>Want the next post in your inbox?</h2>
-      <p>Share your email and I’ll send every new article, plus short playbooks that you can drop into your content strategy.</p>
+      <p>Share your email and I'll send every new article, plus short playbooks that you can drop into your content strategy.</p>
       <a class="btn-primary" href="contact.html">Talk about content</a>
     </div>
   </main>
 
   <footer>
-    <span>© 2026 Sachin Devmurari</span>
+    <span>&#169; 2026 Sachin Devmurari</span>
     <span>Based in Ahmedabad, Gujarat</span>
-    <span>Answer Engine Optimization · Content Strategy</span>
+    <span>Answer Engine Optimization &middot; Content Strategy</span>
   </footer>
 </body>
 </html>
