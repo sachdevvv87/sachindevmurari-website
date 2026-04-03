@@ -1,40 +1,282 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog</title>
-    <style>
-        .post-card {
-            height: 420px;
-        }
-        .post-thumb {
-            background-size: cover;
-            background-position: center;
-        }
-        .post-cat {
-            z-index: 2;
-        }
-        .linkedin-post {
-            background: linear-gradient(135deg, #0A103E, #0D1540);
-        }
-        .aeo-post {
-            background: linear-gradient(135deg, #1A0A3E, #0D1B40);
-        }
-        .navigation a {
-            color: white;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog — Sachin Devmurari</title>
+  <meta name="description" content="Latest ideas on LinkedIn growth, AEO/GEO, and AI visibility from Sachin Devmurari." />
+  <meta name="robots" content="index, follow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #07090f;
+      --surface: #0e1117;
+      --surface-strong: #141824;
+      --border: rgba(255, 255, 255, 0.07);
+      --accent: #00d4aa;
+      --primary: linear-gradient(135deg, #6c5ce7, #8b5cf6);
+      --text: #ffffff;
+      --muted: #8892a4;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    header {
+      padding: 18px 48px;
+      position: sticky;
+      top: 0;
+      background: rgba(7, 9, 15, 0.85);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(14px);
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      font-size: 20px;
+    }
+    .logo span {
+      color: var(--accent);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--muted);
+    }
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    .btn-primary {
+      padding: 10px 26px;
+      border-radius: 999px;
+      background: var(--primary);
+      color: #fff;
+      font-weight: 600;
+      border: none;
+      outline: none;
+    }
+    .btn-primary:hover {
+      opacity: 0.95;
+    }
+
+    main {
+      padding: 40px 48px 80px;
+    }
+
+    .hero {
+      max-width: 960px;
+      margin: 0 auto 60px;
+      text-align: center;
+    }
+    .hero h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(40px, 6vw, 60px);
+      line-height: 1.1;
+      margin-bottom: 16px;
+    }
+    .hero p {
+      font-size: 18px;
+      color: var(--muted);
+      margin-bottom: 24px;
+    }
+
+    .hero span {
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 8px;
+    }
+
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 28px;
+    }
+
+    .blog-card {
+      background: var(--surface);
+      border-radius: 24px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      min-height: 340px;
+      transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+    .blog-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(255, 255, 255, 0.3);
+    }
+
+    .blog-thumb {
+      position: relative;
+      padding: 30px;
+      min-height: 170px;
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .blog-thumb::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent, rgba(7, 9, 15, 0.85));
+    }
+    .blog-cat {
+      position: relative;
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: #fff;
+    }
+    .blog-emoji {
+      position: relative;
+      font-size: 32px;
+    }
+
+    .blog-body {
+      padding: 28px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .blog-body h3 {
+      font-size: 20px;
+      line-height: 1.4;
+    }
+    .blog-body p {
+      color: var(--muted);
+      font-size: 15px;
+    }
+    .blog-meta {
+      margin-top: auto;
+      display: flex;
+      justify-content: space-between;
+      font-size: 13px;
+      color: var(--muted);
+      letter-spacing: 0.5px;
+    }
+
+    .cta {
+      margin-top: 70px;
+      background: var(--surface-strong);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      padding: 40px;
+      text-align: center;
+    }
+    .cta h2 {
+      font-size: clamp(28px, 4vw, 36px);
+      margin-bottom: 12px;
+    }
+    .cta p {
+      color: var(--muted);
+      margin-bottom: 24px;
+    }
+
+    footer {
+      padding: 32px 48px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+  </style>
 </head>
 <body>
-    <div class="navigation">
-        <a href="/blog">Blog</a>
+  <header>
+    <a class="logo" href="index.html">Sachin<span>.</span></a>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="index.html#services">Services</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <a class="btn-primary" href="contact.html">Book a call</a>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="section-label">Journal</div>
+      <h1>Fresh thinking on AEO, GEO, and LinkedIn growth.</h1>
+      <p>Every post is grounded in experiments, client wins, and the latest shifts in AI search behaviour. Scroll, read, and apply.</p>
+      <span>Updated April 2026</span>
+    </section>
+
+    <section aria-label="Latest articles">
+      <div class="blog-grid">
+        <a class="blog-card" href="posts/b2b-linkedin-growth-strategy-2026.html">
+          <div class="blog-thumb" style="background-image: linear-gradient(135deg, #0c134f, #0d1540);">
+            <span class="blog-cat">LinkedIn</span>
+            <div class="blog-emoji">💼</div>
+          </div>
+          <div class="blog-body">
+            <h3>The 2026 B2B LinkedIn Blueprint: How to Build a Growth Strategy That Drives Inbound Pipeline</h3>
+            <p>Organic company reach has dropped 24% in two years. Here is what actually works now: profile engineering, intent signals, and paid formats that cut cost per lead in half.</p>
+            <div class="blog-meta">
+              <span>March 29, 2026</span>
+              <span>12 min read →</span>
+            </div>
+          </div>
+        </a>
+
+        <a class="blog-card" href="posts/aeo-guide-2026.html">
+          <div class="blog-thumb" style="background-image: linear-gradient(135deg, #0c0c16, #0d1b40);">
+            <span class="blog-cat">AEO / GEO</span>
+            <div class="blog-emoji">🧠</div>
+          </div>
+          <div class="blog-body">
+            <h3>Answer Engine Optimization in 2026: How to Get Your Brand Cited by ChatGPT, Perplexity &amp; Google SGE</h3>
+            <p>A practical framework for structuring content that earns zero-click visibility in AI-powered answer engines.</p>
+            <div class="blog-meta">
+              <span>March 10, 2026</span>
+              <span>10 min read →</span>
+            </div>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <div class="cta">
+      <h2>Want the next post in your inbox?</h2>
+      <p>Share your email and I’ll send every new article, plus short playbooks that you can drop into your content strategy.</p>
+      <a class="btn-primary" href="contact.html">Talk about content</a>
     </div>
-    <div class="post-card linkedin-post">
-        <!-- LinkedIn content goes here -->
-    </div>
-    <div class="post-card aeo-post">
-        <!-- AEO content goes here -->
-    </div>
+  </main>
+
+  <footer>
+    <span>© 2026 Sachin Devmurari</span>
+    <span>Based in Ahmedabad, Gujarat</span>
+    <span>Answer Engine Optimization · Content Strategy</span>
+  </footer>
 </body>
 </html>
