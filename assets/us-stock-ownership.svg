@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 470" role="img" aria-label="Line chart of US household stock ownership from 1989 to 2022. All stock ownership rises from 31 percent to 57 percent. Direct stock ownership stays between 13 and 20 percent.">
+  <style>
+    .axis  { fill: #9ca3af; font: 13px system-ui, -apple-system, Segoe UI, sans-serif; }
+    .lgnd  { fill: #e5e7eb; font: 14px system-ui, -apple-system, Segoe UI, sans-serif; }
+    .cap   { fill: #6b7280; font: 12px system-ui, -apple-system, Segoe UI, sans-serif; }
+    .grid  { stroke: #ffffff; stroke-opacity: .10; stroke-width: 1; }
+    .all   { stroke: #4ade80; }
+    .dir   { stroke: #38bdf8; }
+    .ln    { fill: none; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+  </style>
+
+  <!-- legend -->
+  <line class="ln all" x1="252" y1="22" x2="292" y2="22"/>
+  <text class="lgnd" x="300" y="27">All stock ownership</text>
+  <line class="ln dir" x1="470" y1="22" x2="510" y2="22"/>
+  <text class="lgnd" x="518" y="27">Direct stock ownership</text>
+
+  <!-- gridlines + y labels -->
+  <line class="grid" x1="70" y1="60"    x2="775" y2="60"/>
+  <line class="grid" x1="70" y1="116.7" x2="775" y2="116.7"/>
+  <line class="grid" x1="70" y1="173.3" x2="775" y2="173.3"/>
+  <line class="grid" x1="70" y1="230"   x2="775" y2="230"/>
+  <line class="grid" x1="70" y1="286.7" x2="775" y2="286.7"/>
+  <line class="grid" x1="70" y1="343.3" x2="775" y2="343.3"/>
+  <line class="grid" x1="70" y1="400"   x2="775" y2="400"/>
+
+  <text class="axis" x="58" y="65"    text-anchor="end">60%</text>
+  <text class="axis" x="58" y="121.7" text-anchor="end">50%</text>
+  <text class="axis" x="58" y="178.3" text-anchor="end">40%</text>
+  <text class="axis" x="58" y="235"   text-anchor="end">30%</text>
+  <text class="axis" x="58" y="291.7" text-anchor="end">20%</text>
+  <text class="axis" x="58" y="348.3" text-anchor="end">10%</text>
+  <text class="axis" x="58" y="405"   text-anchor="end">0</text>
+
+  <!-- x labels -->
+  <text class="axis" x="70"  y="426" text-anchor="middle">1989</text>
+  <text class="axis" x="258" y="426" text-anchor="middle">1998</text>
+  <text class="axis" x="446" y="426" text-anchor="middle">2007</text>
+  <text class="axis" x="635" y="426" text-anchor="middle">2016</text>
+  <text class="axis" x="760" y="426" text-anchor="middle">2022</text>
+
+  <!-- all stock ownership -->
+  <polyline class="ln all" points="70,224.3 132.7,196 195.5,179 258.2,128 320.9,105.3 383.6,122.3 446.4,105.3 509.1,122.3 571.8,128 634.5,111 697.3,105.3 760,77"/>
+  <g fill="#4ade80">
+    <circle cx="70"    cy="224.3" r="4"/><circle cx="132.7" cy="196"   r="4"/>
+    <circle cx="195.5" cy="179"   r="4"/><circle cx="258.2" cy="128"   r="4"/>
+    <circle cx="320.9" cy="105.3" r="4"/><circle cx="383.6" cy="122.3" r="4"/>
+    <circle cx="446.4" cy="105.3" r="4"/><circle cx="509.1" cy="122.3" r="4"/>
+    <circle cx="571.8" cy="128"   r="4"/><circle cx="634.5" cy="111"   r="4"/>
+    <circle cx="697.3" cy="105.3" r="4"/><circle cx="760"   cy="77"    r="4"/>
+  </g>
+
+  <!-- direct stock ownership -->
+  <polyline class="ln dir" points="70,309.3 132.7,309.3 195.5,320.7 258.2,298 320.9,286.7 383.6,286.7 446.4,303.7 509.1,320.7 571.8,326.3 634.5,326.3 697.3,320.7 760,286.7"/>
+  <g fill="#38bdf8">
+    <circle cx="70"    cy="309.3" r="4"/><circle cx="132.7" cy="309.3" r="4"/>
+    <circle cx="195.5" cy="320.7" r="4"/><circle cx="258.2" cy="298"   r="4"/>
+    <circle cx="320.9" cy="286.7" r="4"/><circle cx="383.6" cy="286.7" r="4"/>
+    <circle cx="446.4" cy="303.7" r="4"/><circle cx="509.1" cy="320.7" r="4"/>
+    <circle cx="571.8" cy="326.3" r="4"/><circle cx="634.5" cy="326.3" r="4"/>
+    <circle cx="697.3" cy="320.7" r="4"/><circle cx="760"   cy="286.7" r="4"/>
+  </g>
+
+  <text class="cap" x="70" y="455">Share of US households owning stock, 1989–2022. Source: Federal Reserve Survey of Consumer Finances.</text>
+</svg>
