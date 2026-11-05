@@ -21,4 +21,13 @@ Allow: /
 User-agent: cohere-ai
 Allow: /
 
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
 Sitemap: https://sachindevmurari.com/sitemap.xml
